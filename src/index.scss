@@ -1,0 +1,55 @@
+// sass-lint:disable force-element-nesting
+// sass-lint:disable no-important
+@import 'scss/variables';
+@import 'scss/classes';
+
+body {
+  background-color: $cv-background-color;
+  font-family: $cv-font-family;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $cv-black-color;
+
+  &:hover {
+    color: $cv-main-color;
+  }
+}
+
+.ui.grid {
+  background-color: $cv-secondary-bg-color;
+  border-radius: $cv-border-radius;
+  flex-wrap: wrap;
+  margin: 0;
+  width: 100%;
+
+  .icon {
+    color: $cv-main-color;
+  }
+
+
+  .ui.list li {
+    &::before {
+      color: $cv-main-color;
+      content: '\2022';
+    }
+  }
+
+}
+
+@media all and (max-width: 640px) {
+  .ui.container.cv-wrapper {
+    margin: .2rem !important;
+
+    .ui.grid {
+
+      .eight.wide.column {
+        width: 100% !important;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,18 @@
+// sass-lint:disable force-element-nesting
+@import 'variables';
+
+.ui.grid {
+
+  .ui.divider.cv-divider {
+    border-top: $cv-divider-border;
+  }
+
+  .cv-info-title {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .cv-main-color {
+    color: $cv-main-color;
+  }
+}

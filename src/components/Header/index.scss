@@ -1,0 +1,23 @@
+// sass-lint:disable force-element-nesting
+@import '../../scss/variables';
+
+.ui.grid.cv-header {
+  margin: 0;
+  min-height: $cv-header-min-height;
+
+  .cv-title {
+    margin-top: 3 * $cv-basic-margin-padding;
+    text-align: center;
+
+    & h1,
+    & h3 {
+      font-family: $cv-font-family;
+      text-transform: uppercase;
+    }
+  }
+
+  .cv-info-title {
+    // font-weight: normal;
+  }
+
+}

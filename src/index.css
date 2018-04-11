@@ -1,0 +1,39 @@
+.ui.grid .ui.divider.cv-divider {
+  border-top: 2px solid #34495e; }
+
+.ui.grid .cv-info-title {
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.ui.grid .cv-main-color {
+  color: #2980b9; }
+
+body {
+  background-color: #34495e;
+  font-family: "Exo 2", Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0; }
+
+a {
+  color: #000; }
+  a:hover {
+    color: #2980b9; }
+
+.ui.grid {
+  background-color: #fff;
+  border-radius: 2px;
+  flex-wrap: wrap;
+  margin: 0;
+  width: 100%; }
+  .ui.grid .icon {
+    color: #2980b9; }
+  .ui.grid .ui.list li::before {
+    color: #2980b9;
+    content: '\2022'; }
+
+@media all and (max-width: 640px) {
+  .ui.container.cv-wrapper {
+    margin: .2rem !important; }
+    .ui.container.cv-wrapper .ui.grid .eight.wide.column {
+      width: 100% !important; } }
