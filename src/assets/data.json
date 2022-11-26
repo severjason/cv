@@ -1,0 +1,434 @@
+{
+  "cv": {
+    "type": "current",
+    "main_info": {
+      "first_name": {
+        "en": "Sergii",
+        "uk": "Сергій"
+      },
+      "last_name": {
+        "en": "Severynov",
+        "uk": "Северинов"
+      },
+      "position": {
+        "en": "Frontend Software Engineer",
+        "uk": "Frontend Розробник"
+      },
+      "framework": "React",
+      "email": "severynov.sergii@gmail.com",
+      "location": {
+        "title": {
+          "en": "Lviv, Ukraine",
+          "uk": "Львів, УкраЇна"
+        },
+        "link": "https://goo.gl/maps/KgBxGBdeY3g5rC6i6"
+      },
+      "github": "https://github.com/severjason",
+      "website": "https://sergii.severynov.com",
+      "facebook": "https://www.facebook.com/severjason",
+      "linked_in": "https://www.linkedin.com/in/severjason"
+    },
+    "profile": {
+      "full": {
+        "en": "I am a Frontend Software Engineer with multiple years of commercial experience in building applications of different complexity and also with the recent experience as a Team Lead. Being familiar with design patterns and domain driven design approaches I always follow the best practices of software development keeping my code clean, clear and scalable. My core technical stack is TypeScript and React/Next.js. I am interested in the development of high load, scalable and complex web applications. My passion is technical implementation and support of complex business needs, and I am eager to be a part of the decision making process.",
+        "uk": "Я Frontend Розробник з багаторічним комерційним досвідом у створенні додатків різної складності, а також з недавнім досвідом роботи в якості Team Lead. Будучи знайомим з патернами проектування та доменно-орієнтованими підходами до проектування, я завжди дотримуюсь найкращих практик розробки програмного забезпечення, зберігаючи свій код чистим, зрозумілим та масштабованим. Мій основний технічний стек - TypeScript та React/Next.js. Я зацікавлений у розробці високонавантажених, масштабованих та складних веб-додатків. Моєю пристрастю є технічна реалізація та підтримка складних бізнес-потреб, і я прагну бути частиною процесу прийняття рішень."
+      },
+      "short": {
+        "en": "I am a Frontend Software Engineer | Team Lead with multiple years of commercial experience in building applications of different complexity.",
+        "uk": "Я Frontend Розробник | Team Lead з багаторічним комерційним досвідом у створенні додатків різної складності"
+      }
+    },
+    "experience": [
+      {
+        "start_date": "2020-07-01T00:00:00Z",
+        "end_date": "2022-11-01T00:00:00Z",
+        "company": "Elementica",
+        "link": "https://elementica.io",
+        "role": {
+          "en": "Frontend Software Engineer | Team Lead",
+          "uk": "Frontend Розробник | Керівник команди"
+        },
+        "location": {
+          "uk": "Запоріжжя, Україна | Віддалено",
+          "en": "Zaporizhzhia, Ukraine | Remote"
+        },
+        "list": [
+          {
+            "title": {
+              "en": "Multitenancy and multi-language educational platform",
+              "uk": "Багатомовна та мільтітенантна освітня платформа"
+            },
+            "text": {
+              "en": "main goal of this app  is to empower children and students to explore, imagine and engage with ideas as they learn and to help parents or family members to communicate with children by participating in lessons, games, and even sharing story time.",
+              "uk": "основна мета цього додатку це дати можливість дітям та учням досліджувати, уявляти та взаємодіяти з ідеями під час навчання, а також допомогти батькам або членам сім'ї спілкуватися з дітьми, беручи участь в уроках, іграх і навіть розказуючи їм історії."
+            },
+            "sub_items": [
+              {
+                "en": "I led the frontend team (4 developers) and managed the project in general (10 developers - FE, BE, QA). Together with the owner and CTO I was also responsible for the main technical decisions.",
+                "uk": "Я очолював фронтенд-команду (4 розробника) і керував проектом в цілому (10 розробників - FE, BE, QA). Разом з власником та технічним директором я також був відповідальним за основні технічні рішення."
+              },
+              {
+                "en": "Project had a complex structure with 6 frontend apps and 7 backend microservices on Node.js and Python. Core features - live chat/video streams, live activities between users, multitenancy, internationalization, user generated content, moderation, kids accounts, payments, automated/manual tests, CI/CD, etc.",
+                "uk": "Проект мав складну структуру з 6 фронтенд-додатків та 7 бекенд-мікросервісів на Node.js та Python. Основні функції - live чат/відеострім, активності між користувачами, мільтітенантність, інтернаціоналізація, користувацький контент, модерація, дитячі акаунти, платежі, автоматизовані/ручні тести, CI/CD, тощо."
+              },
+              {
+                "en": "The most interesting and challenging part for me was the creation of the independent mini-apps (games, lessons) that were used across all apps (were moved to separate npm package at first, and later to a Next.js app) and the implementation of the live communication between users that allows them to play together in mentioned mini-games.",
+                "uk": "Найцікавішим та найскладнішим для мене було створення незалежних міні-додатків (ігор, уроків), які використовувались у всіх додатках (спочатку були перенесені в окремий npm-пакет, а згодом в додаток Next.js) та реалізація живої комунікації між користувачами, що дозволяє їм разом грати у згадані міні-ігри."
+              }
+            ]
+          },
+          {
+            "title": {
+              "en": "Cryptocurrency project",
+              "uk": "Криптовалютний проєкт"
+            },
+            "text": {
+              "en": "I was a technical lead in the project that includes landing page, staking app and admin panel.",
+              "uk": "Я був технічним керівником проекту, який включав в себе лендінг, додаток для стейкінгу та адміністративну панель."
+            }
+          },
+          {
+            "title": {
+              "en": "Telehealth platform",
+              "uk": "Телемедична платформа"
+            },
+            "text": {
+              "en": "A technology platform, which combines artificial intelligence, population insights, and predictive care navigation with a broad network of fully integrated healthcare services.",
+              "uk": "Технологічна платформа, яка поєднує в собі штучний інтелект, демографічні дані та прогностичну навігацію з широкою мережею повністю інтегрованих медичних послуг."
+            },
+            "sub_items": [
+              {
+                "en": "I led the frontend team (3 developers) initially and then switched to technical management of the project in general (3 developers - FE, BE, QA).",
+                "uk": "Я очолював фронтенд команду (4 розробника), а також керував проектом в цілому (10 розробників - FE, BE, QA)."
+              },
+              {
+                "en": "One of the most difficult tasks was to refactor the entire application to modern code standards in order to achieve scalability and maintainability. Also a lot of efforts were made to make the project fully accessible for people with disabilities.",
+                "uk": "Однією з найскладніших задач було рефакторинг всього додатку на сучасні стандарти коду з метою досягнення масштабованості та супроводжуваності. Також багато зусиль було докладено для того, щоб зробити проект повністю доступним для людей з обмеженими можливостями."
+              }
+            ]
+          },
+          {
+            "title": {
+              "en": "Marketplace startup",
+              "uk": "Маркетплейс стартап"
+            },
+            "text": {
+              "en": "I developed frontend part of the MVP for the startup that allows users not only sell/buy/share goods and services but mainly valuable information. Core features - SSR, SEO, chat and user generated content.",
+              "uk": "Я розробив фронтенд частину MVP для стартапу, який дозволяє користувачам не тільки продавати/купувати/обмінюватися товарами та послугами, а й, головним чином, цінною інформацією. Основні функції - SSR, SEO, чат та користувацький контент."
+            }
+          },
+          {
+            "text": {
+              "en": "Interns code review and training, interviewing new candidates, communication with a clients and project management.",
+              "uk": "Перевірка та навчання стажерів, проведення співбесід з новими кандидатами, комунікація з клієнтами та управління проектами."
+            }
+          }
+        ]
+      },
+      {
+        "start_date": "2018-05-01T00:00:00Z",
+        "end_date": "2020-05-01T00:00:00Z",
+        "company": "LightIT",
+        "role": {
+          "en": "Frontend Software Engineer",
+          "uk": "Frontend Розробник"
+        },
+        "location": {
+          "uk": "Запоріжжя, Україна",
+          "en": "Zaporizhzhia, Ukraine"
+        },
+        "link": "https://light-it.net/",
+        "list": [
+          {
+            "title": {
+              "en": "Trips planning project",
+              "uk": "Проект планування подорожей"
+            },
+            "text": {
+              "en": "UI development with PWA and offline support, realtime updates, internationalization, dynamic forms, third-party services integration (Leaflet, Booking, Expedia, Viator etc.), events tracking, user-generated content and SEO optimization.",
+              "uk": "Розробка UI з PWA та офлайн підтримкою, оновленням данних в реальному часі, інтернаціоналізацією, динамічними формами, інтеграцією зі сторонніми сервісами (Leaflet, Booking, Expedia, Viator та ін.), відстеженням подій, створеним користувачами контентом та SEO оптимізацією."
+            }
+          },
+          {
+            "title": {
+              "en": "Fintech project",
+              "uk": "Фінтех-проект"
+            },
+            "text": {
+              "en": "UI development and frontend architecture design, dynamic forms implementation, form widget integration for internal financial institution project specializing in short term high-risk lending in Georgia and Romania.",
+              "uk": "Розробка UI та фронтенд архітектури, впровадження динамічних форм, інтеграція форми-віджету для внутрішнього проекту фінансової установи, що спеціалізується на короткостроковому високоризиковому кредитуванні."
+            }
+          },
+          {
+            "title": {
+              "en": "Cryptocurrency news analysis project",
+              "uk": "Проект аналізу новин криптовалют"
+            },
+            "text": {
+              "en": "implementing major code refactoring from SPA to SSR (Next.js) + PWA.",
+              "uk": "впровадження значного реформування коду з SPA на SSR + PWA."
+            }
+          },
+          {
+            "text": {
+              "en": "Speaker for internal offline and online meetups.",
+              "uk": "Спікер у внутрішніх онлайн та офлайн конференціях."
+            }
+          },
+          {
+            "text": {
+              "en": "Interns code review and training, interviewing new candidates.",
+              "uk": "Код ревью та навчання стажерів, проведення співбесід."
+            }
+          }
+        ]
+      },
+      {
+        "start_date": "2018-08-01T00:00:00Z",
+        "end_date": "2019-04-01T00:00:00Z",
+        "company": "Upwork",
+        "role": {
+          "en": "Web developer",
+          "uk": "Веб Розробник"
+        },
+        "location": {
+          "en": "Remote",
+          "uk": "Віддалено"
+        },
+        "link": "https://www.upwork.com/o/profiles/users/_~01fff6263f5fd6f506/",
+        "list": [
+          {
+            "title": "Local Insights",
+            "text": {
+              "en": "data provider focused on real-time real estate records, building permits, tax assessments and more. I was responsible for adding new features, design updates, bug fixes, code refactoring.",
+              "uk": "провайдер даних зосереджений на обліку нерухомості в режимі реального часу, дозволах на будівництво, податкових нарахувань та інше. Я був відповідальний за додавання нових функцій, оновлення дизайну, виправлення багів, рефакторинг коду."
+            }
+          }
+        ]
+      },
+      {
+        "start_date": "2018-04-01T00:00:00Z",
+        "end_date": "2018-05-01T00:00:00Z",
+        "company": "Chp",
+        "role": {
+          "en": "Web developer",
+          "uk": "Веб Розробник"
+        },
+        "location": {
+          "uk": "Запоріжжя, Україна",
+          "en": "Zaporizhzhia, Ukraine"
+        },
+        "link": "https://chp.zp.ua/",
+        "list": [
+          {
+            "text": {
+              "en": "Design and creating landing page for local air conditioning company.",
+              "uk": "Лендінг для локальної компанії з продажу кондиціонерів."
+            }
+          }
+        ]
+      },
+      {
+        "start_date": "2014-08-01T00:00:00Z",
+        "end_date": "2015-02-01T00:00:00Z",
+        "company": "oDesk",
+        "role": {
+          "en": "Web developer",
+          "uk": "Веб Розробник"
+        },
+        "location": {
+          "en": "Remote",
+          "uk": "Віддалено"
+        },
+        "link": "https://www.upwork.com/o/profiles/users/_~01fff6263f5fd6f506/",
+        "list": [
+          {
+            "text": {
+              "en": "Bug fixing, design updates and minor improvements for the short-term projects.",
+              "uk": "Виправлення багов, оновлення дизайну та незначні покращення для короткострокових проектів."
+            }
+          }
+        ]
+      },
+      {
+        "start_date": "2009-09-01T00:00:00Z",
+        "end_date": "2018-05-01T00:00:00Z",
+        "company": {
+          "en": "JSC Motor Sich",
+          "uk": "АТ 'Мотор Січ'"
+        },
+        "role": {
+          "en": "Foreign trade department engineer",
+          "uk": "Інженер зовнішньоторговельного департаменту"
+        },
+        "location": {
+          "uk": "Запоріжжя, Україна",
+          "en": "Zaporizhzhia, Ukraine"
+        },
+        "list": [
+          {
+            "text": {
+              "en": "Negotiation, execution, signing and support of contracts for the sale of aviation goods and services.",
+              "uk": "Проведення переговорів, оформлення, підписання та супровід контрактів на продаж авіаційних товарів та послуг."
+            }
+          }
+        ]
+      }
+    ],
+    "skills": {
+      "primary": [
+        [
+          { "name": "HTML5" },
+          { "name": "CSS3" },
+          { "name": "SCSS" }
+        ],
+        [
+          { "name": "TypeScript" },
+          { "name": "JavaScript" }
+        ],
+        [
+          { "name": "React" },
+          { "name": "Next.js" },
+          { "name": "Redux" },
+          { "name": "Apollo GraphQL" }
+        ],
+        [
+          { "name": "Material-UI" },
+          { "name": "Styled-components" }
+        ],
+        [
+          { "name": "CI/CD" },
+          { "name": "AWS (Route 53, EC2, S3, CloudFront)" },
+          { "name": "Vercel" },
+          { "name": "SEO" }
+        ],
+        [
+          { "name": "Webpack" },
+          { "name": "Rollup" },
+          { "name": "npm packages" }
+        ],
+        [
+          { "name": "Firebase" },
+          { "name": "Firestore" },
+          { "name": "Storybook" }
+        ],
+        [
+          { "name": "Jest" },
+          { "name": "React Testing Library" }
+        ],
+        [
+          { "name": "REST API" },
+          { "name": "PWA" },
+          { "name": "Responsive Design" },
+          { "name": "Functional Programming" },
+          { "name": "Performance Optimization" },
+          { "name": "Team Management" }
+        ],
+        [
+          { "name": "Scrum (Agile, Kanban)" },
+          { "name": "Figma, Photoshop" }
+        ]
+      ],
+      "secondary": [
+        [
+          { "name": "Node.js" },
+          { "name": "Express" },
+          { "name": "MongoDB" }
+        ],
+        [
+          { "name": "Canvas" },
+          { "name": "Recharts" }
+        ],
+        [
+          { "name": "Blockchain" },
+          { "name": "Web3" }
+        ],
+        [
+          { "name": "Docker" },
+          { "name": "nginx" }
+        ]
+      ]
+    },
+    "languages": [
+      {
+        "title": {
+          "en": "English",
+          "uk": "Англійська"
+        },
+        "level": {
+          "en": "Advanced",
+          "uk": "Високий"
+        }
+      },
+      {
+        "title": {
+          "en": "Ukrainian",
+          "uk": "Українська"
+        },
+        "level": {
+          "en": "Native",
+          "uk": "Рідний"
+        }
+      },
+      {
+        "title": {
+          "en": "Russian",
+          "uk": "Російська"
+        },
+        "level": {
+          "en": "Native",
+          "uk": "Рідний"
+        }
+      }
+    ],
+    "education": [
+      {
+        "type": "additional",
+        "title":  {
+          "en": "Courses",
+          "uk": "Курси"
+        },
+        "items": [
+          {
+            "en": "AWS for Front-End Engineers, 2019, Frontend Masters",
+            "uk": "AWS for Front-End Engineers, 2019, Frontend Masters"
+          },
+          {
+            "en": "Zero to Mastery (Junior to Senior Web developer), 2018, Udemy",
+            "uk": "Zero to Mastery (Junior to Senior Web developer), 2018, Udemy"
+          },
+          {
+            "en": "Web Development, 2016-2017, Brain Academy (Zaporizhzhia)",
+            "uk": "Веб Розробка, 2016-2017, Brain Academy (Запоріжжя)"
+          }
+        ]
+      },
+      {
+        "type": "basic",
+        "start_date": "2005",
+        "end_date": "2009",
+        "company":  {
+          "en": "Zaporizhzhian National Technical University",
+          "uk": "Запорізький Національний Технічний Університет"
+        },
+        "role": {
+          "en": "Finance and Credit",
+          "uk": "Фінанси та кредит"
+        }
+      },
+      {
+        "type": "basic",
+        "start_date": "2004",
+        "end_date": "2009",
+        "company": {
+          "en": "Zaporizhzhian National Technical University",
+          "uk": "Запорізький Національний Технічний Університет"
+        },
+        "role": {
+          "en": "Aviation Engines Production Technology",
+          "uk": "Технологія будування авіаційних двигунів"
+        }
+      }
+    ]
+  }
+}
