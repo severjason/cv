@@ -1,0 +1,33 @@
+{
+  "langSwitch": "Switch to Ukrainian",
+  "paletteSwitchDark": "Switch to dark mode",
+  "paletteSwitchLight": "Switch to light mode",
+  "at": "at",
+  "visit": "Visit",
+  "profile": "Profile",
+  "links": {
+    "email": "Email me",
+    "phone": "Phone me",
+    "location": "My location"
+  },
+  "social": {
+    "github": "Checkout my GitHub",
+    "linkedIn": "Follow me on LinkedIn",
+    "facebook": "Follow me on Facebook",
+    "website": "My website"
+  },
+  "experience": {
+    "title": "Experience"
+  },
+  "skills": {
+    "title": "Skills",
+    "primary": "Primary",
+    "secondary": "Secondary"
+  },
+  "languages": {
+    "title": "Languages"
+  },
+  "education": {
+    "title": "Education"
+  }
+}

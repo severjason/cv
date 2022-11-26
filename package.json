@@ -1,0 +1,62 @@
+{
+  "name": "cv2-ssr",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc --pretty --noEmit",
+    "format": "prettier --write **/**/*.{js,ts,tsx}",
+    "lint": "eslint . --ext ts --ext tsx --ext js",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "npm run lint",
+      "npm run format"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "next/babel"
+    ]
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/icons-material": "^5.10.15",
+    "@mui/material": "^5.10.15",
+    "@mui/styles": "^5.10.15",
+    "@types/react-helmet": "^6.1.5",
+    "cookies-next": "^2.1.1",
+    "dayjs": "^1.11.6",
+    "eslint-config-next": "^13.0.5",
+    "i18next": "^22.0.6",
+    "next": "^13.0.5",
+    "next-connect": "^1.0.0-next.3",
+    "next-i18next": "^13.0.0",
+    "next-pwa": "^5.5.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-i18next": "^12.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.6",
+    "@types/react": "^18.0.17",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.4",
+    "prettier": "^2.8.0",
+    "typescript": "^4.9.3"
+  }
+}

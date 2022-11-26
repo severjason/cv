@@ -1,0 +1,33 @@
+{
+  "langSwitch": "Перейти на англійську",
+  "paletteSwitchDark": "Змінити на темну тему",
+  "paletteSwitchLight": "Змінити на світлу тему",
+  "at": "у",
+  "visit": "Відвідати",
+  "profile": "Профіль",
+  "links": {
+    "email": "Надіслати мені листа",
+    "phone": "Зателефонувати мені",
+    "location": "Моє місцезнаходження"
+  },
+  "social": {
+    "github": "Мій GitHub",
+    "linkedIn": "Мій LinkedIn",
+    "facebook": "Мій Facebook",
+    "website": "Мій сайт"
+  },
+  "experience": {
+    "title": "Досвід"
+  },
+  "skills": {
+    "title": "Навички",
+    "primary": "Основні",
+    "secondary": "Додаткові"
+  },
+  "languages": {
+    "title": "Мови"
+  },
+  "education": {
+    "title": "Освіта"
+  }
+}
