@@ -80,7 +80,7 @@ The root of project contains common configuration file like _.gitignore_, _.esli
 
 ## Environment variables
 
-| VAR                   | Description         |
-|-----------------------|---------------------|
-| `NEXT_PUBLIC_APP_URL` | app url             |
-| `NEXT_PUBLIC_GA_ID`   | google analytics id |
+| VAR                 | Description         |
+|---------------------|---------------------|
+| `DATABASE_URL`      | mongodb url         |
+| `NEXT_PUBLIC_GA_ID` | google analytics id |

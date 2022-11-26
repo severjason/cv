@@ -24,6 +24,7 @@
     "paths": {
       "@/root/*": ["./*"],
       "@/api-lib/*": ["./api-lib/*"],
+      "@/database/*": ["./database/*"],
       "@/*": ["src/*"],
       "@/features/*": ["src/features/*"],
       "@/assets/*": ["src/assets/*"],

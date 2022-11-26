@@ -5,7 +5,7 @@ import { ssrTranslations } from '@/utils/i18n';
 import { useAppTranslations, useData } from '@/hooks';
 import { Layout } from '@/shared';
 import { CVDataResponse } from '@/types';
-import { getMyCV } from '@/features/root/api';
+import CvService from '@/api-lib/cv/cv.service';
 
 type Props = {
   data: CVDataResponse;
@@ -34,7 +34,7 @@ const HomePage: NextPage<Props> = ({ data }) => {
 export default HomePage;
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const data = await getMyCV();
+  const data = await CvService.getCvDataJSON();
   return {
     props: {
       data,
