@@ -22,7 +22,7 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",
-    "next/core-web-vitals"
+    "plugin:@next/next/recommended"
   ],
   "env": {
     "es6": true,
