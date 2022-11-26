@@ -1,7 +1,12 @@
-export const Custom404 = () => <div />;
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-export const getStaticProps = () => {
-  return { redirect: { destination: '/', permanent: false } };
+export const Custom404 = () => {
+  const router = useRouter();
+  useEffect(() => {
+    router.push('/');
+  }, []);
+  return <div />;
 };
 
 export default Custom404;
