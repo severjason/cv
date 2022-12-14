@@ -55,6 +55,7 @@ export type ListItem = {
   title?: string | I18Data;
   link?: string;
   sub_items?: I18Data[];
+  stack?: string[];
 };
 
 export enum EducationType {

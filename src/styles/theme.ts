@@ -22,6 +22,9 @@ const createAppTheme = (mode: PaletteMode) =>
               boxShadow: 'none',
               backgroundColor: 'white',
             },
+            '@media (max-width: 600px)': {
+              padding: 8,
+            },
           },
         },
       },

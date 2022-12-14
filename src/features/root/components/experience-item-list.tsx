@@ -28,7 +28,7 @@ const ExperienceItemList: React.FC<Props> = ({ list }) => {
 
   return list?.length > 0 ? (
     <List disablePadding>
-      {list.map(item => (
+      {list.map((item, index) => (
         <React.Fragment key={parseI18Data(item.text)}>
           <ListItem sx={{ p: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <Grid container wrap="nowrap">
@@ -63,6 +63,20 @@ const ExperienceItemList: React.FC<Props> = ({ list }) => {
             </Grid>
             <ExperienceSubItemList list={item.sub_items} />
           </ListItem>
+          {item.stack?.length ?? 0 > 0 ? (
+            <Typography
+              sx={theme => ({
+                paddingLeft: {
+                  xs: list?.length > 1 ? theme.spacing(2) : 0,
+                  sm: list?.length > 1 ? theme.spacing(4) : 0,
+                },
+                fontStyle: 'italic',
+                pb: index !== list.length - 1 ? 1 : 0,
+              })}
+            >
+              {`${t('common:experience.stack')}: ${item.stack?.join(', ')}.`}
+            </Typography>
+          ) : null}
         </React.Fragment>
       ))}
     </List>

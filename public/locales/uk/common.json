@@ -17,7 +17,8 @@
     "website": "Мій сайт"
   },
   "experience": {
-    "title": "Досвід"
+    "title": "Досвід",
+    "stack": "Технічний стек"
   },
   "skills": {
     "title": "Навички",

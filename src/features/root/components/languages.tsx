@@ -16,15 +16,15 @@ const Languages = () => {
     <Grid container>
       <Titles.Section icon={LangIcon} text={`${t('common:languages.title')}`} />
       <Paper
-        sx={{
+        sx={theme => ({
           width: '100%',
-          padding: theme => theme.spacing(2),
+          padding: theme.spacing(2),
           marginBottom: {
-            xs: theme => theme.spacing(1),
-            sm: theme => theme.spacing(1),
+            xs: theme.spacing(1),
+            sm: theme.spacing(1),
             md: 0,
           },
-        }}
+        })}
       >
         {data?.languages?.map(lang => (
           <Item key={parseI18Data(lang.title)} {...lang} />

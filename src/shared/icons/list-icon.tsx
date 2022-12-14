@@ -16,12 +16,15 @@ const ListIcon: React.FC<ListItemIconProps> = ({ sx, ...props }) => {
       {...props}
     >
       <CircleIcon
-        sx={{
+        sx={theme => ({
           width: 8,
           height: 8,
-          m: theme => theme.spacing(1, 2, 1, 1),
-          color: theme => getSxColor(theme),
-        }}
+          margin: {
+            xs: theme.spacing(0.5, 1, 0.5, 0.5),
+            sm: theme.spacing(1, 2, 1, 1),
+          },
+          color: getSxColor(theme),
+        })}
       />
     </ListItemIcon>
   );

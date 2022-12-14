@@ -18,7 +18,7 @@ const ExperienceSubItemList: React.FC<Props> = ({ list }) => {
     <List disablePadding sx={{ width: '100%' }}>
       {list?.map(item => (
         <ListItem key={parseI18Data(item)} sx={{ p: 0 }}>
-          {list?.length > 1 && <Icons.SubList />}
+          <Icons.SubList />
           <ListItemText>{parseI18Data(item)}</ListItemText>
         </ListItem>
       ))}

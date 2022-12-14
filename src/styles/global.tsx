@@ -27,7 +27,8 @@ const AppGlobalStyles: React.FC<Props> = ({ mode, lang }) => {
           },
         },
         '@page': {
-          size: lang === Locales.uk ? '1200px 2496px' : '1200px 2496px',
+          margin: 0,
+          size: lang === Locales.uk ? '1200px 2869px' : '1200px 2849px',
         },
         img: {
           maxWidth: '100%',

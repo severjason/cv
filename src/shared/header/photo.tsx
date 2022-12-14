@@ -37,6 +37,7 @@ const Photo = () => {
         }}
       >
         <Image
+          loading="eager"
           title={`${fullName} photo`}
           style={{ objectFit: 'cover' }}
           src={avatar.src}

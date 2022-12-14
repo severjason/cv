@@ -17,7 +17,8 @@
     "website": "My website"
   },
   "experience": {
-    "title": "Experience"
+    "title": "Experience",
+    "stack": "Technical stack"
   },
   "skills": {
     "title": "Skills",
