@@ -13,6 +13,9 @@ interface MyAppProps extends AppProps {
 import '@/styles/fonts.css';
 import { Analytics, Theme } from '@/shared';
 import 'dayjs/locale/uk';
+import packageJSON from '../package.json';
+
+console.info(`Current app version: ${packageJSON.version}`);
 
 const CVApp: React.FC<MyAppProps> = ({ Component, pageProps, emotionCache = clientSideEmotionCache }) => {
   return (
