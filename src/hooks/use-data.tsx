@@ -1,5 +1,5 @@
 import React, { ReactNode, useCallback, useContext } from 'react';
-import { CVDataResponse, I18Data } from '@/types';
+import type { CVDataResponse, I18Data } from '@/types';
 import { useAppTranslations } from '@/hooks/index';
 
 export const DataContext = React.createContext<CVDataResponse>(null);

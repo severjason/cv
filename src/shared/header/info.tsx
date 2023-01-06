@@ -7,8 +7,8 @@ import React, { ReactElement, useCallback } from 'react';
 
 import { useAppTranslations } from '@/hooks';
 import { useData } from '@/hooks/use-data';
-import { SxProps } from '@mui/material';
-import { Theme } from '@mui/material/styles';
+import type { SxProps } from '@mui/material';
+import type { Theme } from '@mui/material/styles';
 
 type ItemProps = {
   title: string | ReactElement;

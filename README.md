@@ -70,6 +70,7 @@ The root of project contains common configuration file like _.gitignore_, _.esli
 |--------------|----------------------------------|
 | `dev`        | start server in development mode |
 | `build`      | build app                        |
+| `analyze`    | run bundle analyzer              |
 | `start`      | started built app                |
 | `type-check` | run typescript types checking    |
 | `format`     | run prettier                     |

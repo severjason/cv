@@ -1,6 +1,6 @@
 import React, { ReactNode, useCallback, useContext } from 'react';
-import { PaletteMode } from '@mui/material';
-import { Theme } from '@mui/material/styles';
+import type { PaletteMode } from '@mui/material';
+import type { Theme } from '@mui/material/styles';
 
 type AppTheme = {
   mode?: PaletteMode;

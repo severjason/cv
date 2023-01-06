@@ -4,7 +4,7 @@ import ListItemText from '@mui/material/ListItemText';
 import React from 'react';
 
 import { Icons } from '@/shared';
-import { ListItem as ListItemType } from '@/types';
+import type { ListItem as ListItemType } from '@/types';
 import { useData } from '@/hooks/use-data';
 
 type Props = {

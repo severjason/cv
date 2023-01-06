@@ -1,5 +1,5 @@
 import { getCookie, setCookie } from 'cookies-next';
-import { PaletteMode } from '@mui/material';
+import type { PaletteMode } from '@mui/material';
 
 const KEYS = {
   mode: 'cv-mode',

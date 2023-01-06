@@ -1,7 +1,7 @@
-import { OverridableComponent } from '@mui/material/OverridableComponent';
+import type { OverridableComponent } from '@mui/material/OverridableComponent';
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import { SvgIconTypeMap } from '@mui/material';
+import type { SvgIconTypeMap } from '@mui/material/SvgIcon';
 import Typography from '@mui/material/Typography';
 import { useAppTheme } from '@/hooks';
 

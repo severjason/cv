@@ -1,1 +1,7 @@
-export { default as Gtag } from './gtag';
+import dynamic from 'next/dynamic';
+
+const Gtag = dynamic(() => import('./gtag'), {
+  ssr: false,
+});
+
+export { Gtag };

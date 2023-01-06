@@ -7,7 +7,7 @@ import OpenIcon from '@mui/icons-material/Launch';
 import React, { useCallback } from 'react';
 
 import { Icons } from '@/shared';
-import { ExperienceItem, I18Data, ListItem as ListItemType } from '@/types';
+import type { ExperienceItem, I18Data, ListItem as ListItemType } from '@/types';
 import { useAppTheme, useAppTranslations, useData } from '@/hooks';
 import ExperienceSubItemList from '@/features/root/components/experience-subitem-list';
 import Grid from '@mui/material/Grid';

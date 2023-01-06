@@ -1,7 +1,7 @@
 import { grey } from '@mui/material/colors';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import React from 'react';
-import { PaletteMode } from '@mui/material';
+import type { PaletteMode } from '@mui/material';
 import { Locales } from '@/types';
 
 type Props = {

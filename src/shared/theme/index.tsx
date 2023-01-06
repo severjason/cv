@@ -1,7 +1,8 @@
 import React, { ReactNode, useCallback, useEffect, useMemo } from 'react';
 
 import { ThemeAppProvider } from '@/hooks/use-app-theme';
-import { PaletteMode, useMediaQuery } from '@mui/material';
+import type { PaletteMode } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import createAppTheme from '@/styles/theme';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';

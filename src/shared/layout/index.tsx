@@ -3,9 +3,9 @@ import Container from '@mui/material/Container';
 import React, { ReactNode } from 'react';
 
 import { Footer, Header, Titles } from '@/shared';
-import { PageTitleProps } from '@/shared/titles/page';
+import type { PageTitleProps } from '@/shared/titles/page';
 import { DataWrapper } from '@/hooks/use-data';
-import { CVDataResponse } from '@/types';
+import type { CVDataResponse } from '@/types';
 
 type Props = Omit<PageTitleProps, 'url'> & {
   data?: CVDataResponse;

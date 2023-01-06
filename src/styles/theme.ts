@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import { PaletteMode } from '@mui/material';
+import type { PaletteMode } from '@mui/material';
 
 const createAppTheme = (mode: PaletteMode) =>
   createTheme({

@@ -6,7 +6,7 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 
 import { useAppTheme, useAppTranslations } from '@/hooks';
 import { Theme, useTheme } from '@mui/material/styles';
-import { useMediaQuery } from '@mui/material';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const PaletteSwitcher = () => {
   const theme = useTheme<Theme>();

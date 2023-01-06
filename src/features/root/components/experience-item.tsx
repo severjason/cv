@@ -6,7 +6,7 @@ import CalendarIcon from '@mui/icons-material/DateRange';
 import MarkerIcon from '@mui/icons-material/Room';
 import React, { useCallback, useMemo } from 'react';
 
-import { ExperienceItem, I18Data } from '@/types';
+import type { ExperienceItem, I18Data } from '@/types';
 import { useAppTheme, useAppTranslations, useData } from '@/hooks';
 import ExperienceItemList from '@/features/root/components/experience-item-list';
 import dayjs from 'dayjs';

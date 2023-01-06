@@ -5,8 +5,8 @@ import React, { useMemo } from 'react';
 
 import { LANGUAGES } from 'src/constants';
 import { useAppTranslations } from '@/hooks';
-import { useMediaQuery } from '@mui/material';
-import { Theme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import type { Theme } from '@mui/material/styles';
 
 const LangSwitcher = () => {
   const { t, lang } = useAppTranslations();
