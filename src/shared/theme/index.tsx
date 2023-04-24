@@ -1,14 +1,15 @@
 import React, { ReactNode, useCallback, useEffect, useMemo } from 'react';
 
-import { ThemeAppProvider } from '@/hooks/use-app-theme';
 import type { PaletteMode } from '@mui/material';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import createAppTheme from '@/styles/theme';
-import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import GlobalStyles from '@/styles/global';
-import { getPaletteMode, savePaletteMode } from '@/utils/cookies';
+import { ThemeProvider } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 import { useAppTranslations } from '@/hooks';
+import { ThemeAppProvider } from '@/hooks/use-app-theme';
+import GlobalStyles from '@/styles/global';
+import createAppTheme from '@/styles/theme';
+import { getPaletteMode, savePaletteMode } from '@/utils/cookies';
 
 type Props = {
   children?: ReactNode;

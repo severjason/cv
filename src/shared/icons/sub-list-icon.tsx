@@ -1,6 +1,8 @@
 import React from 'react';
-import ListItemIcon, { ListItemIconProps } from '@mui/material/ListItemIcon';
+
 import RemoveIcon from '@mui/icons-material/Remove';
+import ListItemIcon, { ListItemIconProps } from '@mui/material/ListItemIcon';
+
 import { useAppTheme } from '@/hooks';
 
 const SubListIcon: React.FC<ListItemIconProps> = ({ sx, ...props }) => {

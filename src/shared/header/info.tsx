@@ -1,14 +1,15 @@
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
+import React, { ReactElement, useCallback } from 'react';
+
 import EmailIcon from '@mui/icons-material/Email';
 import MarkerIcon from '@mui/icons-material/Room';
-import React, { ReactElement, useCallback } from 'react';
+import type { SxProps } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
+import Typography from '@mui/material/Typography';
+import type { Theme } from '@mui/material/styles';
 
 import { useAppTranslations } from '@/hooks';
 import { useData } from '@/hooks/use-data';
-import type { SxProps } from '@mui/material';
-import type { Theme } from '@mui/material/styles';
 
 type ItemProps = {
   title: string | ReactElement;

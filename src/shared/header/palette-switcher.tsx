@@ -1,12 +1,13 @@
-import Grid from '@mui/material/Grid';
-import IconButton from '@mui/material/IconButton';
 import React from 'react';
+
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-
-import { useAppTheme, useAppTranslations } from '@/hooks';
+import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
 import { Theme, useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+
+import { useAppTheme, useAppTranslations } from '@/hooks';
 
 const PaletteSwitcher = () => {
   const theme = useTheme<Theme>();

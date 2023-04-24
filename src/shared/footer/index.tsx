@@ -1,8 +1,10 @@
+import React from 'react';
+
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import React from 'react';
-import { useData } from '@/hooks';
 import { darken } from '@mui/system';
+
+import { useData } from '@/hooks';
 
 const Footer = () => {
   const { fullName } = useData();

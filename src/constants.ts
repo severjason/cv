@@ -1,16 +1,17 @@
-import { Icons } from '@/shared';
-import { Locales, Languages } from '@/types';
+import UAflag from '@/shared/icons/ua-flag';
+import USflag from '@/shared/icons/us-flag';
+import { Languages, Locales } from '@/types';
 
 export const LANGUAGES: Languages = {
   en: {
     lang: Locales.en,
     nextLang: Locales.uk,
-    flagIcon: Icons.USflag,
+    flagIcon: USflag,
   },
   uk: {
     lang: Locales.uk,
     nextLang: Locales.en,
-    flagIcon: Icons.UAflag,
+    flagIcon: UAflag,
   },
 };
 

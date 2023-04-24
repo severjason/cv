@@ -1,7 +1,9 @@
-import { grey } from '@mui/material/colors';
-import GlobalStyles from '@mui/material/GlobalStyles';
 import React from 'react';
+
 import type { PaletteMode } from '@mui/material';
+import GlobalStyles from '@mui/material/GlobalStyles';
+import { grey } from '@mui/material/colors';
+
 import { Locales } from '@/types';
 
 type Props = {
@@ -28,7 +30,7 @@ const AppGlobalStyles: React.FC<Props> = ({ mode, lang }) => {
         },
         '@page': {
           margin: 0,
-          size: lang === Locales.uk ? '1200px 2869px' : '1200px 2849px',
+          size: lang === Locales.uk ? '1200px 2990px' : '1200px 2970px',
         },
         img: {
           maxWidth: '100%',

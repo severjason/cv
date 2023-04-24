@@ -1,4 +1,5 @@
 import { getCookie, setCookie } from 'cookies-next';
+
 import type { PaletteMode } from '@mui/material';
 
 const KEYS = {

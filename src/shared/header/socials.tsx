@@ -1,13 +1,14 @@
-import Grid from '@mui/material/Grid';
-import IconButton from '@mui/material/IconButton';
+import React, { useMemo } from 'react';
+
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import React, { useMemo } from 'react';
+import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
+import { darken } from '@mui/system';
 
 import { useAppTranslations } from '@/hooks';
 import { useData } from '@/hooks/use-data';
-import { darken } from '@mui/system';
 
 const Socials = () => {
   const { t } = useAppTranslations();

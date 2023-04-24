@@ -1,8 +1,10 @@
-import { useRouter } from 'next/router';
 import React from 'react';
+
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+
 import avatar from '@/assets/avatar.webp';
 import { Locales } from '@/types';
-import Head from 'next/head';
 
 export type PageTitleProps = {
   title: string;

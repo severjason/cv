@@ -1,8 +1,10 @@
+import React from 'react';
+
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
-import { alpha } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import React from 'react';
+import { alpha } from '@mui/material/styles';
+
 import { useData } from '@/hooks';
 
 import Info from './info';

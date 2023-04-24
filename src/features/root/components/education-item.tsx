@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
-import Paper from '@mui/material/Paper';
+
 import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
 
 type Props = {
   children?: ReactNode;

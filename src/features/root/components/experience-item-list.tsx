@@ -1,16 +1,17 @@
+import React, { useCallback } from 'react';
+
+import OpenIcon from '@mui/icons-material/Launch';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
-import OpenIcon from '@mui/icons-material/Launch';
-import React, { useCallback } from 'react';
 
-import { Icons } from '@/shared';
-import type { ExperienceItem, I18Data, ListItem as ListItemType } from '@/types';
-import { useAppTheme, useAppTranslations, useData } from '@/hooks';
 import ExperienceSubItemList from '@/features/root/components/experience-subitem-list';
-import Grid from '@mui/material/Grid';
+import { useAppTheme, useAppTranslations, useData } from '@/hooks';
+import ListIcon from '@/shared/icons/list-icon';
+import type { ExperienceItem, I18Data, ListItem as ListItemType } from '@/types';
 
 type Props = {
   list: ExperienceItem['list'];
@@ -32,7 +33,7 @@ const ExperienceItemList: React.FC<Props> = ({ list }) => {
         <React.Fragment key={parseI18Data(item.text)}>
           <ListItem sx={{ p: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <Grid container wrap="nowrap">
-              {list?.length > 1 && <Icons.List />}
+              {list?.length > 1 && <ListIcon />}
               <ListItemText>
                 {item.title && (
                   <span>

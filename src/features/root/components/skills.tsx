@@ -1,12 +1,14 @@
-import Paper from '@mui/material/Paper';
-import SkillIcon from '@mui/icons-material/Keyboard';
 import React, { useMemo } from 'react';
 
+import SkillIcon from '@mui/icons-material/Keyboard';
+import Paper from '@mui/material/Paper';
+
+import { useAppTranslations } from '@/hooks';
+import { useData } from '@/hooks/use-data';
 import { Titles } from '@/shared';
 import type { SkillsData } from '@/types';
-import { useAppTranslations } from '@/hooks';
+
 import Item from './skills-item';
-import { useData } from '@/hooks/use-data';
 
 const Skills = () => {
   const { t } = useAppTranslations();

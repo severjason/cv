@@ -1,10 +1,12 @@
 import React from 'react';
-import type { EducationDataAdditional } from '@/types';
-import { useData } from '@/hooks';
+
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import { Icons } from '@/shared';
 import ListItemText from '@mui/material/ListItemText';
+
+import { useData } from '@/hooks';
+import { Icons } from '@/shared';
+import type { EducationDataAdditional } from '@/types';
 
 type Props = {
   list: EducationDataAdditional['items'];

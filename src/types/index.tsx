@@ -1,5 +1,5 @@
-import { OverridableComponent } from '@mui/material/OverridableComponent';
 import { SvgIconTypeMap } from '@mui/material';
+import { OverridableComponent } from '@mui/material/OverridableComponent';
 
 export type CVData = {
   main_info: CVMainInfo;

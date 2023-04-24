@@ -1,11 +1,13 @@
-import Grid from '@mui/material/Grid';
-import WorkIcon from '@mui/icons-material/Work';
 import React from 'react';
-import { Titles } from '@/shared';
+
+import WorkIcon from '@mui/icons-material/Work';
+import Grid from '@mui/material/Grid';
 
 import { useAppTranslations } from '@/hooks';
-import ExperienceItem from './experience-item';
 import { useData } from '@/hooks/use-data';
+import { Titles } from '@/shared';
+
+import ExperienceItem from './experience-item';
 
 const Experience = () => {
   const { t } = useAppTranslations();

@@ -1,12 +1,14 @@
 import React from 'react';
+
 import Grid from '@mui/material/Grid';
-import Titles from './titles';
-import Photo from './photo';
-import Socials from './socials';
-import LangSwitcher from './lang-switcher';
-import PaletteSwitcher from './palette-switcher';
 import { grey } from '@mui/material/colors';
 import { darken } from '@mui/system';
+
+import LangSwitcher from './lang-switcher';
+import PaletteSwitcher from './palette-switcher';
+import Photo from './photo';
+import Socials from './socials';
+import Titles from './titles';
 
 const Header = () => (
   <Grid component="header">

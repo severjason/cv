@@ -1,12 +1,14 @@
-import Grid from '@mui/material/Grid';
-import IconButton from '@mui/material/IconButton';
-import Link from 'next/link';
 import React, { useMemo } from 'react';
 
+import Link from 'next/link';
 import { LANGUAGES } from 'src/constants';
-import { useAppTranslations } from '@/hooks';
-import useMediaQuery from '@mui/material/useMediaQuery';
+
+import Grid from '@mui/material/Grid';
+import IconButton from '@mui/material/IconButton';
 import type { Theme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
+import { useAppTranslations } from '@/hooks';
 
 const LangSwitcher = () => {
   const { t, lang } = useAppTranslations();

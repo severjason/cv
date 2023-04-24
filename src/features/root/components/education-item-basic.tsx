@@ -1,11 +1,12 @@
 import React from 'react';
+
+import CalendarIcon from '@mui/icons-material/DateRange';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import CalendarIcon from '@mui/icons-material/DateRange';
 
-import type { EducationDataBasic } from '@/types';
-import { useAppTheme, useData } from '@/hooks';
 import EducationItem from '@/features/root/components/education-item';
+import { useAppTheme, useData } from '@/hooks';
+import type { EducationDataBasic } from '@/types';
 
 const EducationItemBasic: React.FC<EducationDataBasic> = ({ company, end_date, role, start_date }) => {
   const { parseI18Data } = useData();

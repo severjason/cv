@@ -1,5 +1,6 @@
-import SvgIcon from '@mui/material/SvgIcon';
 import React from 'react';
+
+import SvgIcon from '@mui/material/SvgIcon';
 
 const UAFlag = () => (
   <SvgIcon viewBox="0 0 640 480">

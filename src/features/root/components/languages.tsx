@@ -1,12 +1,14 @@
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import LangIcon from '@mui/icons-material/Language';
 import React from 'react';
 
-import { Titles } from '@/shared';
+import LangIcon from '@mui/icons-material/Language';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+
 import { useAppTranslations } from '@/hooks';
-import Item from './languages-item';
 import { useData } from '@/hooks/use-data';
+import { Titles } from '@/shared';
+
+import Item from './languages-item';
 
 const Languages = () => {
   const { t } = useAppTranslations();

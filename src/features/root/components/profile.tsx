@@ -1,12 +1,13 @@
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import AssignmentInd from '@mui/icons-material/AssignmentInd';
 import React, { useMemo } from 'react';
 
-import { Titles } from '@/shared';
+import AssignmentInd from '@mui/icons-material/AssignmentInd';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+
 import { useAppTranslations } from '@/hooks';
 import { useData } from '@/hooks/use-data';
-import Typography from '@mui/material/Typography';
+import { Titles } from '@/shared';
 
 const Profile = () => {
   const { t, lang } = useAppTranslations();

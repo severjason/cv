@@ -1,8 +1,15 @@
-import { AppProps } from 'next/app';
 import React from 'react';
-import { appWithTranslation } from 'next-i18next';
+
 import { CacheProvider, EmotionCache } from '@emotion/react';
+import 'dayjs/locale/uk';
+import { appWithTranslation } from 'next-i18next';
+import { AppProps } from 'next/app';
+
+import { Analytics, Theme } from '@/shared';
 import createEmotionCache from '@/styles/create-emotion-cache';
+import '@/styles/fonts.css';
+
+import packageJSON from '../package.json';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -10,10 +17,6 @@ const clientSideEmotionCache = createEmotionCache();
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache;
 }
-import '@/styles/fonts.css';
-import { Analytics, Theme } from '@/shared';
-import 'dayjs/locale/uk';
-import packageJSON from '../package.json';
 
 console.info(`Current app version: ${packageJSON.version}`);
 

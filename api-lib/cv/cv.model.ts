@@ -1,4 +1,4 @@
-import { model, Model, models, Schema } from 'mongoose';
+import { Model, Schema, model, models } from 'mongoose';
 
 import { CV } from './cv.interface';
 

@@ -1,13 +1,14 @@
+import React from 'react';
+
+import { SxProps } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { Theme } from '@mui/material/styles';
-import React from 'react';
 
 import Education from '@/features/root/components/education';
 import Experience from '@/features/root/components/experience';
 import Languages from '@/features/root/components/languages';
 import Profile from '@/features/root/components/profile';
 import Skills from '@/features/root/components/skills';
-import { SxProps } from '@mui/material';
 
 const sxItemStyles: SxProps<Theme> = {
   display: 'flex',

@@ -1,8 +1,9 @@
-import { CVModel } from './cv.model';
-import { CV } from './cv.interface';
-import { connectToDatabase } from '@/database/connection';
-import { throwHttpException } from '@/api-lib/utils/throw-http-exception.util';
 import { ApiErrors } from '@/api-lib/constants/api-errors.constant';
+import { throwHttpException } from '@/api-lib/utils/throw-http-exception.util';
+import { connectToDatabase } from '@/database/connection';
+
+import { CV } from './cv.interface';
+import { CVModel } from './cv.model';
 
 class CVService {
   public async getCvData(): Promise<CV | null> {

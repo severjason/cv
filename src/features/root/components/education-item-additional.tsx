@@ -1,10 +1,11 @@
 import React from 'react';
+
 import Typography from '@mui/material/Typography';
 
-import type { EducationDataAdditional } from '@/types';
-import { useData } from '@/hooks';
 import EducationItem from '@/features/root/components/education-item';
 import EducationItemList from '@/features/root/components/education-item-list';
+import { useData } from '@/hooks';
+import type { EducationDataAdditional } from '@/types';
 
 const EducationItemAdditional: React.FC<EducationDataAdditional> = ({ title, items }) => {
   const { parseI18Data } = useData();

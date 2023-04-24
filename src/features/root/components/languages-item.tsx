@@ -1,9 +1,10 @@
 import React from 'react';
+
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-import type { LanguageItem } from '@/types';
 import { useData } from '@/hooks/use-data';
+import type { LanguageItem } from '@/types';
 
 const LanguagesItem: React.FC<LanguageItem> = ({ title, level }) => {
   const { parseI18Data } = useData();

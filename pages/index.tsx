@@ -1,11 +1,13 @@
 import React, { useMemo } from 'react';
+
 import { GetStaticProps, NextPage } from 'next';
 import App from 'src/features/root';
-import { ssrTranslations } from '@/utils/i18n';
+
+import CvService from '@/api-lib/cv/cv.service';
 import { useAppTranslations, useData } from '@/hooks';
 import { Layout } from '@/shared';
 import { CVDataResponse } from '@/types';
-import CvService from '@/api-lib/cv/cv.service';
+import { ssrTranslations } from '@/utils/i18n';
 
 type Props = {
   data: CVDataResponse;

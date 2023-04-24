@@ -1,10 +1,12 @@
+import React from 'react';
+
+import Image from 'next/image';
+
 import Avatar from '@mui/material/Avatar';
 import Grid from '@mui/material/Grid';
-import React from 'react';
 
 import avatar from '@/assets/avatar.webp';
 import { useData } from '@/hooks';
-import Image from 'next/image';
 
 const Photo = () => {
   const { fullName } = useData();

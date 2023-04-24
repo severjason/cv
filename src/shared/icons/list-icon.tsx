@@ -1,6 +1,8 @@
 import React from 'react';
-import ListItemIcon, { ListItemIconProps } from '@mui/material/ListItemIcon';
+
 import CircleIcon from '@mui/icons-material/Circle';
+import ListItemIcon, { ListItemIconProps } from '@mui/material/ListItemIcon';
+
 import { useAppTheme } from '@/hooks';
 
 const ListIcon: React.FC<ListItemIconProps> = ({ sx, ...props }) => {

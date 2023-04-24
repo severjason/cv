@@ -1,14 +1,14 @@
 import React from 'react';
+
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
-
 import Typography from '@mui/material/Typography';
 
-import type { SkillListItem } from '@/types';
-import { Icons } from '@/shared';
 import { useAppTranslations } from '@/hooks';
+import { Icons } from '@/shared';
+import type { SkillListItem } from '@/types';
 
 type Props = {
   title: string;

@@ -1,18 +1,29 @@
+import React, { useCallback, useMemo } from 'react';
+
+import dayjs from 'dayjs';
+
+import CalendarIcon from '@mui/icons-material/DateRange';
+import MarkerIcon from '@mui/icons-material/Room';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import CalendarIcon from '@mui/icons-material/DateRange';
-import MarkerIcon from '@mui/icons-material/Room';
-import React, { useCallback, useMemo } from 'react';
 
-import type { ExperienceItem, I18Data } from '@/types';
-import { useAppTheme, useAppTranslations, useData } from '@/hooks';
-import ExperienceItemList from '@/features/root/components/experience-item-list';
-import dayjs from 'dayjs';
 import { DEFAULT_DATE_FORMAT } from '@/constants';
+import ExperienceItemList from '@/features/root/components/experience-item-list';
+import { useAppTheme, useAppTranslations } from '@/hooks';
+import useData from '@/hooks/use-data';
+import type { ExperienceItem, I18Data } from '@/types';
 
-const ExperienceItem: React.FC<ExperienceItem> = ({ company, end_date, role, start_date, list, location, link }) => {
+const ExperienceItemComponent: React.FC<ExperienceItem> = ({
+  company,
+  end_date,
+  role,
+  start_date,
+  list,
+  location,
+  link,
+}) => {
   const { t, lang } = useAppTranslations();
   const { parseI18Data } = useData();
   const { getSxColor } = useAppTheme();
@@ -23,7 +34,8 @@ const ExperienceItem: React.FC<ExperienceItem> = ({ company, end_date, role, sta
   );
 
   const getFormattedDate = useCallback(
-    (date: string) => dayjs(date, '').locale(lang).format(DEFAULT_DATE_FORMAT),
+    (date: ExperienceItem['start_date'] | ExperienceItem['end_date']) =>
+      date === 'present' ? 'present' : dayjs(date).locale(lang)?.format?.(DEFAULT_DATE_FORMAT),
     [lang]
   );
 
@@ -93,4 +105,4 @@ const ExperienceItem: React.FC<ExperienceItem> = ({ company, end_date, role, sta
   );
 };
 
-export default ExperienceItem;
+export default ExperienceItemComponent;

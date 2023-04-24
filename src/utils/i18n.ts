@@ -1,5 +1,6 @@
 import type { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import { LocaleNamespaces, Locales } from '@/types';
 
 export const ssrTranslations = async (locale?: string, namespaces: LocaleNamespaces[] = []) => {

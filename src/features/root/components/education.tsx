@@ -1,13 +1,15 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
-import SchoolIcon from '@mui/icons-material/School';
 
+import SchoolIcon from '@mui/icons-material/School';
+import Grid from '@mui/material/Grid';
+
+import { useAppTranslations } from '@/hooks';
+import { useData } from '@/hooks/use-data';
 import { Titles } from '@/shared';
 import { EducationType } from '@/types';
-import { useAppTranslations } from '@/hooks';
-import EducationItemBasic from './education-item-basic';
+
 import EducationItemAdditional from './education-item-additional';
-import { useData } from '@/hooks/use-data';
+import EducationItemBasic from './education-item-basic';
 
 const Education = () => {
   const { t } = useAppTranslations();

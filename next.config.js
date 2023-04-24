@@ -5,18 +5,18 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 const withPWA = require('next-pwa')({
-    disable: process.env.NODE_ENV === 'development',
-    dest: 'public'
+  disable: process.env.NODE_ENV === 'development',
+  dest: 'public',
 });
 
-const nextConfig = withBundleAnalyzer(withPWA(
-    {
-        reactStrictMode: true,
-        compiler: {
-            emotion: true
-        },
-        i18n
-    }
-));
+const nextConfig = withBundleAnalyzer(
+  withPWA({
+    reactStrictMode: true,
+    compiler: {
+      emotion: true,
+    },
+    i18n,
+  })
+);
 
 module.exports = nextConfig;

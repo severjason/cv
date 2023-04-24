@@ -1,4 +1,5 @@
-import { useTranslation, UseTranslationOptions } from 'react-i18next';
+import { UseTranslationOptions, useTranslation } from 'react-i18next';
+
 import type { LocaleNamespaces, Locales } from '@/types';
 
 const useAppTranslations = (ns?: LocaleNamespaces | LocaleNamespaces[], options?: UseTranslationOptions) => {
