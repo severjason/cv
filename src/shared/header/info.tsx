@@ -1,4 +1,4 @@
-import React, { ReactElement, useCallback } from 'react';
+import React, { ReactElement, useCallback, useRef, useState } from 'react';
 
 import EmailIcon from '@mui/icons-material/Email';
 import MarkerIcon from '@mui/icons-material/Room';
@@ -42,10 +42,18 @@ const sxStyles: SxProps<Theme> = {
 const Info = () => {
   const { t, lang } = useAppTranslations();
   const { data } = useData();
+  const [emailIsShown, setEmailIsShown] = useState(false);
+  const ref = useRef<HTMLAnchorElement>(null);
 
-  const handleEmailClick = useCallback(() => {
-    window.open(`mailto:${data?.main_info?.email}`, '_blank', 'noopener noreferrer');
-  }, [data?.main_info?.email]);
+  const handleClick = (e: React.MouseEvent) => {
+    if (!emailIsShown) {
+      e.preventDefault();
+      if (ref.current) {
+        ref.current.href = `mailto:${data?.main_info?.email}`;
+      }
+      setEmailIsShown(true);
+    }
+  };
 
   return (
     <Grid container pt={1}>
@@ -54,11 +62,13 @@ const Info = () => {
           icon={<EmailIcon />}
           title={
             <Link
-              target="_blank"
+              ref={ref}
+              target={'_blank'}
               rel="noopener noreferrer"
               title={t('common:links.email') as string}
               sx={sxStyles}
-              onClick={handleEmailClick}
+              href={`mailto:${data?.main_info?.email}`}
+              onClick={handleClick}
             >
               <Typography
                 component="span"
@@ -69,7 +79,7 @@ const Info = () => {
                   },
                 }}
               >
-                {t('common:links.email')}
+                {emailIsShown ? data?.main_info?.email : t('common:links.email')}
               </Typography>
               <Typography
                 sx={{
