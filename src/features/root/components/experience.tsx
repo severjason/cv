@@ -15,9 +15,7 @@ const Experience = () => {
   return data?.experience?.length ? (
     <Grid container>
       <Titles.Section icon={WorkIcon} text={`${t('common:experience.title')}`} />
-      {data?.experience?.map((exp, index) => (
-        <ExperienceItem key={index} {...exp} />
-      ))}
+      {data?.experience?.map((exp, index) => <ExperienceItem key={index} {...exp} />)}
     </Grid>
   ) : null;
 };

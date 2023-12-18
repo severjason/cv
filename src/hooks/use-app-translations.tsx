@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 
 import type { LocaleNamespaces, Locales } from '@/types';
 
-const useAppTranslations = (ns?: LocaleNamespaces | LocaleNamespaces[], options?: UseTranslationOptions) => {
+const useAppTranslations = (ns?: LocaleNamespaces | LocaleNamespaces[], options?: UseTranslationOptions<'cv'>) => {
   const { i18n, ...rest } = useTranslation(ns, options);
   return {
     i18n,

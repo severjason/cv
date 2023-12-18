@@ -28,9 +28,7 @@ const Languages = () => {
           },
         })}
       >
-        {data?.languages?.map(lang => (
-          <Item key={parseI18Data(lang.title)} {...lang} />
-        ))}
+        {data?.languages?.map(lang => <Item key={parseI18Data(lang.title)} {...lang} />)}
       </Paper>
     </Grid>
   ) : null;
