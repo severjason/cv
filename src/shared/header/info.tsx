@@ -67,7 +67,6 @@ const Info = () => {
               rel="noopener noreferrer"
               title={t('common:links.email') as string}
               sx={sxStyles}
-              href={`mailto:${data?.main_info?.email}`}
               onClick={handleClick}
             >
               <Typography

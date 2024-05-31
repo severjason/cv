@@ -11,7 +11,7 @@ type Props = {
   lang?: Locales;
 };
 
-const AppGlobalStyles: React.FC<Props> = ({ mode, lang }) => {
+const AppGlobalStyles: React.FC<Props> = ({ mode }) => {
   return (
     <GlobalStyles
       styles={{
@@ -30,7 +30,6 @@ const AppGlobalStyles: React.FC<Props> = ({ mode, lang }) => {
         },
         '@page': {
           margin: 0,
-          size: lang === Locales.uk ? '1200px 2990px' : '1200px 2970px',
         },
         img: {
           maxWidth: '100%',
