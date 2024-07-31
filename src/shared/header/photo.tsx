@@ -2,53 +2,24 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import Avatar from '@mui/material/Avatar';
-import Grid from '@mui/material/Grid';
-
 import avatar from '@/assets/avatar.webp';
 import { useData } from '@/hooks';
 
 const Photo = () => {
   const { fullName } = useData();
+
   return (
-    <Grid
-      item
-      width="100%"
-      height="100%"
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      maxWidth={{ xs: 125, sm: 150, md: 250 }}
-      minHeight={{ xs: 125, sm: 150, md: 250 }}
-      sx={{
-        '@media print': {
-          minHeight: 150,
-          maxWidth: 150,
-        },
-      }}
-    >
-      <Avatar
-        sx={{
-          width: { xs: 100, sm: 150, md: 200 },
-          height: { xs: 100, sm: 150, md: 200 },
-          margin: theme => theme.spacing(1),
-          '@media print': {
-            width: 150,
-            height: 150,
-          },
-        }}
-      >
-        <Image
-          loading="eager"
-          title={`${fullName} photo`}
-          style={{ objectFit: 'cover' }}
-          src={avatar.src}
-          alt={`${fullName} photo`}
-          width={200}
-          height={200}
-        />
-      </Avatar>
-    </Grid>
+    <div className="flex w-full h-full justify-center items-center max-w-32 md:max-w-40 xl:max-w-64 ">
+      <Image
+        loading="eager"
+        title={`${fullName} photo`}
+        className={'object-cover aspect-square rounded-full'}
+        src={avatar.src}
+        alt={`${fullName} photo`}
+        width={200}
+        height={200}
+      />
+    </div>
   );
 };
 

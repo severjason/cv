@@ -1,10 +1,5 @@
 import React from 'react';
 
-import Divider from '@mui/material/Divider';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import { alpha } from '@mui/material/styles';
-
 import { useData } from '@/hooks';
 
 import Info from './info';
@@ -12,66 +7,12 @@ import Info from './info';
 const Titles = () => {
   const { fullName, position } = useData();
   return (
-    <Grid
-      item
-      width="100%"
-      flex={1}
-      sx={{
-        color: theme => theme.palette.primary.contrastText,
-        padding: theme => ({
-          xs: theme.spacing(0, 0.5),
-          sm: 3,
-        }),
-        '@media print': {
-          padding: theme => theme.spacing(1, 2),
-        },
-      }}
-    >
-      <Typography
-        variant="h4"
-        component="h1"
-        pb={1}
-        sx={{
-          textAlign: {
-            xs: 'center',
-            sm: 'left',
-          },
-          fontSize: {
-            xs: '1.75rem',
-            sm: '2.125rem',
-          },
-        }}
-      >
-        {fullName}
-      </Typography>
-      <Typography
-        variant="h5"
-        component="h2"
-        pb={1}
-        sx={{
-          textAlign: {
-            xs: 'center',
-            sm: 'left',
-          },
-          fontSize: {
-            xs: '1.25rem',
-            sm: '1.5rem',
-          },
-          '@media print': {
-            paddingBottom: theme => theme.spacing(1),
-          },
-        }}
-      >
-        {position}
-      </Typography>
-      <Divider
-        component="hr"
-        sx={{
-          backgroundColor: theme => alpha(theme.palette.primary.contrastText, 0.3),
-        }}
-      />
+    <div className="text-white flex-1 w-full p-1 md:p-6 print:my-2 print:mx-4">
+      <h1 className={'uppercase text-center text-3xl pb-2 md:text-left md:text-4xl'}>{fullName}</h1>
+      <h2 className={'uppercase text-center text-xl pb-2 md:text-left md:text-3xl'}>{position}</h2>
+      <hr className="border-white opacity-15" />
       <Info />
-    </Grid>
+    </div>
   );
 };
 

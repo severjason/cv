@@ -1,45 +1,15 @@
-import React from 'react';
-
-import Grid from '@mui/material/Grid';
-import type { OverridableComponent } from '@mui/material/OverridableComponent';
-import type { SvgIconTypeMap } from '@mui/material/SvgIcon';
-import Typography from '@mui/material/Typography';
-
-import { useAppTheme } from '@/hooks';
+import React, { ReactElement } from 'react';
 
 type OwnProps = {
-  icon: OverridableComponent<SvgIconTypeMap>;
+  icon: ReactElement;
   text: string;
 };
 
-const SectionTitle: React.FC<OwnProps> = ({ icon: Icon, text }) => {
-  const { getSxColor } = useAppTheme();
-  return (
-    <Grid
-      container
-      alignItems="center"
-      sx={{
-        paddingX: 0,
-        paddingY: 2,
-      }}
-    >
-      <Icon
-        sx={{
-          mr: 1,
-          color: theme => getSxColor(theme),
-        }}
-      />
-      <Typography
-        variant="h5"
-        component="h3"
-        sx={{
-          color: theme => getSxColor(theme),
-        }}
-      >
-        {text}
-      </Typography>
-    </Grid>
-  );
-};
+const SectionTitle: React.FC<OwnProps> = ({ icon, text }) => (
+  <div className="flex items-center px-0 py-4">
+    <span className={'mr-2 text-primary-950'}>{icon}</span>
+    <h3 className={'text-2xl uppercase text-primary-950'}>{text}</h3>
+  </div>
+);
 
 export default SectionTitle;

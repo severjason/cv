@@ -1,14 +1,8 @@
 import React, { useMemo } from 'react';
 
-import FacebookIcon from '@mui/icons-material/Facebook';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import Grid from '@mui/material/Grid';
-import IconButton from '@mui/material/IconButton';
-import { darken } from '@mui/system';
-
 import { useAppTranslations } from '@/hooks';
 import { useData } from '@/hooks/use-data';
+import { Buttons, Icons } from '@/shared';
 
 const Socials = () => {
   const { t } = useAppTranslations();
@@ -20,55 +14,36 @@ const Socials = () => {
         id: 'github',
         title: t('common:social.github'),
         href: data?.main_info?.github,
-        Icon: GitHubIcon,
+        Icon: Icons.GitHub,
       },
       {
         id: 'linkedIn',
         title: t('common:social.linkedIn'),
         href: data?.main_info?.linked_in,
-        Icon: LinkedInIcon,
+        Icon: Icons.LinkedIn,
       },
       {
         id: 'facebook',
         title: t('common:social.facebook'),
         href: data?.main_info?.facebook,
-        Icon: FacebookIcon,
+        Icon: Icons.Facebook,
       },
     ],
     [t, data]
   );
 
   return (
-    <Grid
-      container
-      justifyContent="center"
-      sx={{
-        minHeight: theme => theme.spacing(6),
-        backgroundColor: theme =>
-          theme.palette.mode === 'dark' ? darken(theme.palette.primary.dark, 0.75) : theme.palette.primary.dark,
-        '@media print': {
-          display: 'none',
-        },
-      }}
-    >
+    <div className={'w-full flex justify-center bg-primary-950 print:hidden'}>
       {socials
         .filter(s => s.href)
         .map(({ Icon, href, title, id }) => (
           <a tabIndex={-1} key={id} title={title} rel="noreferrer noopener" target="_blank" href={href as string}>
-            <IconButton
-              role="button"
-              aria-label={title}
-              sx={{
-                margin: theme => theme.spacing(1),
-                color: theme => theme.palette.primary.contrastText,
-              }}
-              size="large"
-            >
-              <Icon />
-            </IconButton>
+            <Buttons.Button role="button" aria-label={title} size="icon" variant="icon" className="m-2 text-white">
+              <Icon className="fill-white" />
+            </Buttons.Button>
           </a>
         ))}
-    </Grid>
+    </div>
   );
 };
 

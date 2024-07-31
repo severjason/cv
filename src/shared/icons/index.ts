@@ -1,4 +1,17 @@
 export { default as List } from './list-icon';
 export { default as SubList } from './sub-list-icon';
+export { default as Calendar } from './calendar-icon';
+export { default as Education } from './education-icon';
+export { default as Marker } from './marker-icon';
+export { default as Open } from './open-icon';
+export { default as Assignment } from './assignment-icon';
+export { default as Keyboard } from './keyboard-icon';
+export { default as Globe } from './globe-icon';
+export { default as Facebook } from './facebook-icon';
+export { default as LinkedIn } from './linkedin-icon';
+export { default as Remove } from './remove-icon';
+export { default as GitHub } from './github-icon';
+export { default as Email } from './email-icon';
+export { default as Work } from './work-icon';
 export { default as UAflag } from './ua-flag';
 export { default as USflag } from './us-flag';

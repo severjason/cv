@@ -1,9 +1,5 @@
 import React from 'react';
 
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-
 import { useData } from '@/hooks';
 import { Icons } from '@/shared';
 import type { EducationDataAdditional } from '@/types';
@@ -15,16 +11,18 @@ type Props = {
 const EducationItemList: React.FC<Props> = ({ list }) => {
   const { parseI18Data } = useData();
 
-  return list?.length ?? 0 > 0 ? (
-    <List disablePadding sx={{ width: '100%' }}>
+  if (!list.length) return null;
+
+  return (
+    <ul className="w-full">
       {list?.map(item => (
-        <ListItem key={parseI18Data(item)} sx={{ p: 0 }}>
+        <li className="flex p-0" key={parseI18Data(item)}>
           {list?.length > 1 && <Icons.List />}
-          <ListItemText>{parseI18Data(item)}</ListItemText>
-        </ListItem>
+          <span className="py-1">{parseI18Data(item)}</span>
+        </li>
       ))}
-    </List>
-  ) : null;
+    </ul>
+  );
 };
 
 export default EducationItemList;

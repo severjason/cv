@@ -1,34 +1,15 @@
 import React from 'react';
 
-import CircleIcon from '@mui/icons-material/Circle';
-import ListItemIcon, { ListItemIconProps } from '@mui/material/ListItemIcon';
-
-import { useAppTheme } from '@/hooks';
-
-const ListIcon: React.FC<ListItemIconProps> = ({ sx, ...props }) => {
-  const { getSxColor } = useAppTheme();
-  return (
-    <ListItemIcon
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        minWidth: 'unset',
-        ...sx,
-      }}
-      {...props}
+const ListIcon: React.FC = () => (
+  <span className="flex items-center">
+    <svg
+      className={'w-2 h-2 m-1 mr-2 md:mr-4 fill-primary-800'}
+      focusable="false"
+      aria-hidden="true"
+      viewBox="0 0 24 24"
     >
-      <CircleIcon
-        sx={theme => ({
-          width: 8,
-          height: 8,
-          margin: {
-            xs: theme.spacing(0.5, 1, 0.5, 0.5),
-            sm: theme.spacing(1, 2, 1, 1),
-          },
-          color: getSxColor(theme),
-        })}
-      />
-    </ListItemIcon>
-  );
-};
+      <path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2"></path>
+    </svg>
+  </span>
+);
 export default ListIcon;

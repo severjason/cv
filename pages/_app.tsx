@@ -1,33 +1,47 @@
 import React from 'react';
 
-import { CacheProvider, EmotionCache } from '@emotion/react';
+import localFont from 'next/font/local';
 import 'dayjs/locale/uk';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
 
-import { Analytics, Theme } from '@/shared';
-import createEmotionCache from '@/styles/create-emotion-cache';
-import '@/styles/fonts.css';
+import { Analytics } from '@/shared';
+import '@/styles/global.css';
+
+const myFont = localFont({
+  src: [
+    {
+      path: '../src/assets/fonts/Exo2-Regular.ttf',
+
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../src/assets/fonts/Exo2-SemiBold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-exo2',
+});
 
 import packageJSON from '../package.json';
 
 // Client-side cache, shared for the whole session of the user in the browser.
-const clientSideEmotionCache = createEmotionCache();
-
-interface MyAppProps extends AppProps {
-  emotionCache?: EmotionCache;
-}
-
 console.info(`Current app version: ${packageJSON.version}`);
 
-const CVApp: React.FC<MyAppProps> = ({ Component, pageProps, emotionCache = clientSideEmotionCache }) => {
+const CVApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <CacheProvider value={emotionCache}>
-      <Theme>
-        <Analytics.Gtag />
-        <Component {...pageProps} />
-      </Theme>
-    </CacheProvider>
+    <>
+      <style jsx global>{`
+        html {
+          font-family: ${myFont.style.fontFamily};
+        }
+      `}</style>
+      <Analytics.Gtag />
+
+      <Component {...pageProps} />
+    </>
   );
 };
 

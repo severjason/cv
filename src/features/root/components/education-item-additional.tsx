@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Typography from '@mui/material/Typography';
-
 import EducationItem from '@/features/root/components/education-item';
 import EducationItemList from '@/features/root/components/education-item-list';
 import { useData } from '@/hooks';
@@ -11,9 +9,7 @@ const EducationItemAdditional: React.FC<EducationDataAdditional> = ({ title, ite
   const { parseI18Data } = useData();
   return (
     <EducationItem>
-      <Typography variant="body2" fontWeight={600}>
-        {parseI18Data(title)}
-      </Typography>
+      <p className="font-semibold">{parseI18Data(title)}</p>
       <EducationItemList list={items} />
     </EducationItem>
   );

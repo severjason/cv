@@ -1,60 +1,23 @@
 import React from 'react';
 
-import Grid from '@mui/material/Grid';
-import { grey } from '@mui/material/colors';
-import { darken } from '@mui/system';
-
 import LangSwitcher from './lang-switcher';
-import PaletteSwitcher from './palette-switcher';
 import Photo from './photo';
 import Socials from './socials';
 import Titles from './titles';
 
 const Header = () => (
-  <Grid component="header">
-    <Grid
-      sx={{
-        position: 'relative',
-        padding: theme => theme.spacing(1),
-        backgroundColor: theme =>
-          theme.palette.mode === 'dark' ? darken(theme.palette.primary.dark, 0.5) : theme.palette.primary.light,
-        '@media print': {
-          backgroundColor: grey[300],
-        },
-      }}
-    >
-      <Grid
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        sx={{
-          top: 0,
-          right: 0,
-          position: 'absolute',
-          padding: theme => theme.spacing(0.5),
-        }}
-      >
-        <PaletteSwitcher />
+  <header>
+    <div className="relative p-2 bg-primary-800 print:bg-gray-300">
+      <div className="flex justify-center items-center top-0 right-0 absolute p-1">
         <LangSwitcher />
-      </Grid>
-      <Grid
-        container
-        justifyContent="center"
-        alignItems="center"
-        sx={{
-          flexDirection: {
-            xs: 'column',
-            sm: 'row',
-            md: 'row',
-          },
-        }}
-      >
+      </div>
+      <div className="flex w-full justify-center items-center flex-col md:flex-row">
         <Photo />
         <Titles />
-      </Grid>
-    </Grid>
+      </div>
+    </div>
     <Socials />
-  </Grid>
+  </header>
 );
 
 export default Header;

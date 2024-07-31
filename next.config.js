@@ -12,9 +12,6 @@ const withPWA = require('next-pwa')({
 const nextConfig = withBundleAnalyzer(
   withPWA({
     reactStrictMode: true,
-    compiler: {
-      emotion: true,
-    },
     i18n,
   })
 );

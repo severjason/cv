@@ -1,15 +1,11 @@
 import React, { ReactElement, useRef, useState } from 'react';
 
-import EmailIcon from '@mui/icons-material/Email';
-import MarkerIcon from '@mui/icons-material/Room';
-import type { SxProps } from '@mui/material';
-import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
-import Typography from '@mui/material/Typography';
-import type { Theme } from '@mui/material/styles';
+import Link from 'next/link';
 
 import { useAppTranslations } from '@/hooks';
 import { useData } from '@/hooks/use-data';
+import { getBtnClx } from '@/shared/button';
+import { Icons } from '@/shared';
 
 type ItemProps = {
   title: string | ReactElement;
@@ -17,27 +13,11 @@ type ItemProps = {
 };
 
 const Item: React.FC<ItemProps> = ({ title, icon }) => (
-  <Grid container pt={0.5} alignItems="center">
-    <Grid item display="flex">
-      {icon}
-    </Grid>
-    <Grid item pl={1}>
-      {title}
-    </Grid>
-  </Grid>
+  <div className="flex w-full pt-1 items-center">
+    <div className="flex">{icon}</div>
+    <div className="flex pl-2">{title}</div>
+  </div>
 );
-
-const sxStyles: SxProps<Theme> = {
-  color: theme => theme.palette.primary.contrastText,
-  textDecoration: 'none',
-  '&:hover': {
-    cursor: 'pointer',
-    textDecoration: 'underline',
-  },
-  '@media print': {
-    color: theme => theme.palette.common.black,
-  },
-};
 
 const Info = () => {
   const { t, lang } = useAppTranslations();
@@ -56,61 +36,46 @@ const Info = () => {
   };
 
   return (
-    <Grid container pt={1}>
+    <div className="flex w-full pt-2 flex-col">
       {data?.main_info?.email ? (
         <Item
-          icon={<EmailIcon />}
+          icon={<Icons.Email className="fill-white" />}
           title={
             <Link
+              tabIndex={0}
               ref={ref}
+              href="#"
               target={'_blank'}
               rel="noopener noreferrer"
               title={t('common:links.email') as string}
-              sx={sxStyles}
+              className={getBtnClx({ variant: 'link' })}
               onClick={handleClick}
             >
-              <Typography
-                component="span"
-                sx={{
-                  display: 'flex',
-                  '@media print': {
-                    display: 'none',
-                  },
-                }}
-              >
+              <span className={'flex print:hidden'}>
                 {emailIsShown ? data?.main_info?.email : t('common:links.email')}
-              </Typography>
-              <Typography
-                sx={{
-                  display: 'none',
-                  '@media print': {
-                    display: 'flex',
-                  },
-                }}
-              >
-                {data?.main_info?.email}
-              </Typography>
+              </span>
+              <span className="hidden hover:flex">{data?.main_info?.email}</span>
             </Link>
           }
         />
       ) : null}
       {data?.main_info?.location?.link ? (
         <Item
-          icon={<MarkerIcon />}
+          icon={<Icons.Marker className="fill-white" />}
           title={
             <Link
               target="_blank"
               rel="noopener noreferrer"
               href={data?.main_info?.location?.link}
               title={t('common:links.location') as string}
-              sx={sxStyles}
+              className={getBtnClx({ variant: 'link' })}
             >
               {data?.main_info?.location?.title?.[lang]}
             </Link>
           }
         />
       ) : null}
-    </Grid>
+    </div>
   );
 };
 

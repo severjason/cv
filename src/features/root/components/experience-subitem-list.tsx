@@ -1,9 +1,5 @@
 import React from 'react';
 
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-
 import { useData } from '@/hooks/use-data';
 import { Icons } from '@/shared';
 import type { ListItem as ListItemType } from '@/types';
@@ -15,16 +11,18 @@ type Props = {
 const ExperienceSubItemList: React.FC<Props> = ({ list }) => {
   const { parseI18Data } = useData();
 
-  return list?.length ?? 0 > 0 ? (
-    <List disablePadding sx={{ width: '100%' }}>
+  if (!list?.length) return null;
+
+  return (
+    <ul className={'w-full'}>
       {list?.map(item => (
-        <ListItem key={parseI18Data(item)} sx={{ p: 0 }}>
+        <li key={parseI18Data(item)} className={'flex py-1 items-center'}>
           <Icons.SubList />
-          <ListItemText>{parseI18Data(item)}</ListItemText>
-        </ListItem>
+          {parseI18Data(item)}
+        </li>
       ))}
-    </List>
-  ) : null;
+    </ul>
+  );
 };
 
 export default ExperienceSubItemList;

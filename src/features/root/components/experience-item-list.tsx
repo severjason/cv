@@ -1,17 +1,31 @@
-import React, { useCallback } from 'react';
-
-import OpenIcon from '@mui/icons-material/Launch';
-import Grid from '@mui/material/Grid';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
+import React from 'react';
 
 import ExperienceSubItemList from '@/features/root/components/experience-subitem-list';
-import { useAppTheme, useAppTranslations, useData } from '@/hooks';
+import { useAppTranslations, useData } from '@/hooks';
 import ListIcon from '@/shared/icons/list-icon';
 import type { ExperienceItem, I18Data, ListItem as ListItemType } from '@/types';
+import { Buttons, Icons } from '@/shared';
+
+type StackListProps = {
+  stack?: string[];
+  index: number;
+  listLength?: number;
+};
+
+const StackList: React.FC<StackListProps> = ({ stack, listLength = 0, index }) => {
+  const { t } = useAppTranslations();
+
+  if (!stack?.length) return null;
+
+  const isLast = index === listLength - 1;
+  const isSingle = listLength <= 1;
+
+  return (
+    <p className={`italic ${isLast ? 'pb-0' : 'pb-2'} ${isSingle ? 'pl-0' : 'pl-4 md:pl-8'}`}>
+      {`${t('common:experience.stack')}: ${stack?.join(', ')}.`}
+    </p>
+  );
+};
 
 type Props = {
   list: ExperienceItem['list'];
@@ -20,68 +34,48 @@ type Props = {
 const ExperienceItemList: React.FC<Props> = ({ list }) => {
   const { t } = useAppTranslations();
   const { parseI18Data } = useData();
-  const { getSxColor } = useAppTheme();
 
-  const parsedTitle = useCallback(
-    (item: ListItemType) => (typeof item.title === 'string' ? item.title : parseI18Data(item.title as I18Data)),
-    [parseI18Data]
-  );
+  const parsedTitle = (item: ListItemType) =>
+    typeof item.title === 'string' ? item.title : parseI18Data(item.title as I18Data);
 
-  return list?.length > 0 ? (
-    <List disablePadding>
+  if (!list?.length) return null;
+
+  return (
+    <ul>
       {list.map((item, index) => (
         <React.Fragment key={parseI18Data(item.text)}>
-          <ListItem sx={{ p: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <Grid container wrap="nowrap">
+          <li className="flex flex-col justify-center">
+            <div className="flex flex-nowrap">
               {list?.length > 1 && <ListIcon />}
-              <ListItemText>
+              <span className={'flex-1 my-1'}>
                 {item.title && (
                   <span>
-                    <Typography component="span" fontWeight={600}>
-                      {parsedTitle(item)}
-                    </Typography>
+                    <span className={'font-semibold'}>{parsedTitle(item)}</span>
                     {` - `}
                   </span>
                 )}
                 {parseI18Data(item.text)}
                 {item.link && (
-                  <IconButton
+                  <Buttons.Button
+                    component={'a'}
                     target="_blank"
                     rel="noopener noreferrer"
                     href={item.link}
-                    sx={{
-                      p: 0,
-                      margin: theme => theme.spacing(0, 0.625),
-                      color: theme => getSxColor(theme),
-                    }}
+                    className={'color-primary-950 my-0 mx-1 py-0 px-0'}
                     title={`${t('common:visit')}`}
-                    size="large"
                   >
-                    <OpenIcon sx={{ fontSize: 16 }} />
-                  </IconButton>
+                    <Icons.Open className={'!w-4 !h-4'} />
+                  </Buttons.Button>
                 )}
-              </ListItemText>
-            </Grid>
+              </span>
+            </div>
             <ExperienceSubItemList list={item.sub_items} />
-          </ListItem>
-          {item.stack?.length ?? 0 > 0 ? (
-            <Typography
-              sx={theme => ({
-                paddingLeft: {
-                  xs: list?.length > 1 ? theme.spacing(2) : 0,
-                  sm: list?.length > 1 ? theme.spacing(4) : 0,
-                },
-                fontStyle: 'italic',
-                pb: index !== list.length - 1 ? 1 : 0,
-              })}
-            >
-              {`${t('common:experience.stack')}: ${item.stack?.join(', ')}.`}
-            </Typography>
-          ) : null}
+          </li>
+          <StackList stack={item?.stack} listLength={list?.length} index={index} />
         </React.Fragment>
       ))}
-    </List>
-  ) : null;
+    </ul>
+  );
 };
 
 export default ExperienceItemList;
