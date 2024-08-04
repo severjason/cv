@@ -1,9 +1,7 @@
 import React from 'react';
 
-import SvgIcon from '@mui/material/SvgIcon';
-
 const USFlag = () => (
-  <SvgIcon viewBox="0 0 640 480">
+  <svg viewBox="0 0 640 480" className={'w-6 h-6'}>
     <g fillRule="evenodd">
       <g strokeWidth="1pt">
         <path
@@ -24,7 +22,7 @@ const USFlag = () => (
         transform="scale(.9375)"
       />
     </g>
-  </SvgIcon>
+  </svg>
 );
 
 export default USFlag;

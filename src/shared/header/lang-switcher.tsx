@@ -1,40 +1,27 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
 import Link from 'next/link';
 import { LANGUAGES } from 'src/constants';
 
-import Grid from '@mui/material/Grid';
-import IconButton from '@mui/material/IconButton';
-import type { Theme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
-
 import { useAppTranslations } from '@/hooks';
+import { Buttons } from '@/shared';
 
 const LangSwitcher = () => {
   const { t, lang } = useAppTranslations();
-  const isSm = useMediaQuery<Theme>(theme => theme.breakpoints.down('sm'));
+  const Icon = LANGUAGES[lang]?.flagIcon;
+  const nextLocale = LANGUAGES[lang]?.nextLang;
 
-  const Icon = useMemo(() => LANGUAGES[lang]?.flagIcon, [lang]);
+  if (!Icon) return null;
 
-  const nextLocale = useMemo(() => LANGUAGES[lang]?.nextLang, [lang]);
-
-  return Icon ? (
-    <Grid
-      item
-      sx={{
-        padding: theme => theme.spacing(0.5),
-        '@media print': {
-          display: 'none',
-        },
-      }}
-    >
+  return (
+    <div className="print:hidden p-1">
       <Link href={`/`} locale={nextLocale}>
-        <IconButton size={isSm ? 'small' : 'large'} title={t('common:langSwitch') as string}>
+        <Buttons.Button size="icon" variant="icon" title={t('common:langSwitch')}>
           <Icon />
-        </IconButton>
+        </Buttons.Button>
       </Link>
-    </Grid>
-  ) : null;
+    </div>
+  );
 };
 
 export default LangSwitcher;

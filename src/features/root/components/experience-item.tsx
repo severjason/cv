@@ -2,18 +2,15 @@ import React, { useCallback, useMemo } from 'react';
 
 import dayjs from 'dayjs';
 
-import CalendarIcon from '@mui/icons-material/DateRange';
-import MarkerIcon from '@mui/icons-material/Room';
-import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
+import Link from 'next/link';
 
 import { DEFAULT_DATE_FORMAT } from '@/constants';
 import ExperienceItemList from '@/features/root/components/experience-item-list';
-import { useAppTheme, useAppTranslations } from '@/hooks';
+import { useAppTranslations } from '@/hooks';
 import useData from '@/hooks/use-data';
 import type { ExperienceItem, I18Data } from '@/types';
+import { Icons, Paper } from '@/shared';
+import { getBtnClx } from '@/shared/button';
 
 const ExperienceItemComponent: React.FC<ExperienceItem> = ({
   company,
@@ -26,7 +23,6 @@ const ExperienceItemComponent: React.FC<ExperienceItem> = ({
 }) => {
   const { t, lang } = useAppTranslations();
   const { parseI18Data } = useData();
-  const { getSxColor } = useAppTheme();
 
   const parsedCompany = useMemo(
     () => (typeof company === 'string' ? company : parseI18Data(company as I18Data)),
@@ -40,19 +36,10 @@ const ExperienceItemComponent: React.FC<ExperienceItem> = ({
   );
 
   return (
-    <Paper
-      sx={{
-        width: '100%',
-        padding: theme => theme.spacing(2),
-        marginBottom: theme => theme.spacing(2),
-        '&:last-child': {
-          marginBottom: 0,
-        },
-      }}
-    >
-      <Grid container wrap="wrap" direction="column">
-        <Grid container>
-          <Typography variant="body2" fontWeight={600} pr={0.5}>
+    <Paper>
+      <div className="flex flex-wrap flex-col">
+        <div>
+          <p className={'font-semibold pr-1 text-lg'}>
             {parseI18Data(role)}
             {parsedCompany ? (
               <>
@@ -60,46 +47,32 @@ const ExperienceItemComponent: React.FC<ExperienceItem> = ({
                 <span>
                   {link ? (
                     <Link
+                      className={`font-semibold ${getBtnClx({ variant: 'link' })}`}
                       color="textPrimary"
                       target="_blank"
                       rel="noopener noreferrer"
                       href={link}
-                      variant="body2"
-                      underline="always"
-                      fontWeight={600}
                       title={`${t('common:visit')} ${parsedCompany}`}
                     >
                       {parsedCompany}
                     </Link>
                   ) : (
-                    <Typography component="span" fontWeight={600}>
-                      {parsedCompany}
-                    </Typography>
+                    <span className="font-semibold">{parsedCompany}</span>
                   )}
                 </span>
               </>
             ) : null}
-          </Typography>
-        </Grid>
-        <Grid container>
-          <Typography display="flex" alignItems="center">
-            <MarkerIcon
-              sx={{
-                mr: 1,
-                p: 0,
-                color: theme => getSxColor(theme),
-              }}
-            />
-          </Typography>
-          <Typography sx={{ color: theme => getSxColor(theme) }}>{parseI18Data(location)}</Typography>
-        </Grid>
-        <Grid container display="flex" alignItems="center" pr={1}>
-          <CalendarIcon sx={{ mr: 1, color: theme => getSxColor(theme) }} />
-          <Typography sx={{ color: theme => getSxColor(theme) }} textTransform="capitalize">{`${getFormattedDate(
-            start_date
-          )} - ${getFormattedDate(end_date)}`}</Typography>
-        </Grid>
-      </Grid>
+          </p>
+        </div>
+        <div className="container flex items-center">
+          <Icons.Marker className={'mr-2 p-0 '} />
+          <span className={'text-primary-800'}>{parseI18Data(location)}</span>
+        </div>
+        <div className={'flex container items-center pr-2 fill-primary-800 text-primary-800'}>
+          <Icons.Calendar className="mr-2" />
+          <span className={'capitalize'}>{`${getFormattedDate(start_date)} - ${getFormattedDate(end_date)}`}</span>
+        </div>
+      </div>
       <ExperienceItemList list={list} />
     </Paper>
   );

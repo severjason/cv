@@ -1,11 +1,5 @@
 import React from 'react';
 
-import Grid from '@mui/material/Grid';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Typography from '@mui/material/Typography';
-
 import { useAppTranslations } from '@/hooks';
 import { Icons } from '@/shared';
 import type { SkillListItem } from '@/types';
@@ -17,35 +11,24 @@ type Props = {
 
 const SkillsItem: React.FC<Props> = ({ title, skillsList }) => {
   const { t } = useAppTranslations();
+
   const generateSkill = ({ name, important }: SkillListItem, index: number, length: number) => {
     const skill = `${name}${length < 2 || index === length - 1 ? '.' : ', '}`;
-    return important ? (
-      <Typography component="span" key={name} fontWeight={600}>
-        {skill}
-      </Typography>
-    ) : (
-      skill
-    );
+    return important ? <span className={'font-semibold'}>{skill}</span> : skill;
   };
 
   return (
-    <Grid container direction="column" mb={0}>
-      <Grid container alignItems="center">
-        <Typography variant="body2" fontWeight={600}>
-          {t(`common:skills.${title}`)}:
-        </Typography>
-      </Grid>
-      <Grid>
-        <List disablePadding>
-          {skillsList.map((skills, index) => (
-            <ListItem key={index} disablePadding>
-              <Icons.List />
-              <ListItemText>{skills?.map((skill, index) => generateSkill(skill, index, skills.length))}</ListItemText>
-            </ListItem>
-          ))}
-        </List>
-      </Grid>
-    </Grid>
+    <div className="flex flex-col">
+      <p className="font-semibold">{t(`common:skills.${title}`)}:</p>
+      <ul>
+        {skillsList.map((skills, index) => (
+          <li key={index} className="flex">
+            <Icons.List />
+            <span className={'py-1'}>{skills?.map((skill, index) => generateSkill(skill, index, skills.length))}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

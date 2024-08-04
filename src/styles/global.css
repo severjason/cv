@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a:focus, a:focus-visible {
+    outline: none;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: .01rem;
+    text-size-adjust: 100%;
+}

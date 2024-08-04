@@ -1,49 +1,30 @@
 import React from 'react';
 
-import { SxProps } from '@mui/material';
-import Grid from '@mui/material/Grid';
-import { Theme } from '@mui/material/styles';
-
 import Education from '@/features/root/components/education';
 import Experience from '@/features/root/components/experience';
 import Languages from '@/features/root/components/languages';
 import Profile from '@/features/root/components/profile';
 import Skills from '@/features/root/components/skills';
 
-const sxItemStyles: SxProps<Theme> = {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-between',
-  padding: theme => theme.spacing(0, 1),
-};
-
 const Root = () => {
   return (
-    <Grid flex={1}>
-      <Grid
-        container
-        sx={{
-          padding: theme => theme.spacing(1, 1, 0, 1),
-          '&:last-child': {
-            padding: theme => theme.spacing(0, 1, 1, 1),
-          },
-        }}
-      >
-        <Grid item xs={12} sm={12} md={12} sx={sxItemStyles}>
+    <div className={'flex-1'}>
+      <div className="grid grid-cols-2 auto-rows-max p-2 pb-0 last-of-type:pb-4 last-of-type:pt-0">
+        <div className={'px-2 col-span-full'}>
           <Profile />
-        </Grid>
-        <Grid item xs={12} sm={12} md={12} sx={sxItemStyles}>
+        </div>
+        <div className={'px-2 col-span-full'}>
           <Experience />
-        </Grid>
-        <Grid item xs={12} sm={12} md={6} sx={sxItemStyles}>
+        </div>
+        <div className={'px-2 flex flex-col justify-between col-span-full xl:col-auto'}>
           <Skills />
-        </Grid>
-        <Grid item xs={12} sm={12} md={6} sx={sxItemStyles}>
+        </div>
+        <div className={'px-2 flex flex-col justify-between col-span-full xl:col-auto'}>
           <Education />
           <Languages />
-        </Grid>
-      </Grid>
-    </Grid>
+        </div>
+      </div>
+    </div>
   );
 };
 
