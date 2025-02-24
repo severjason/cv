@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 import { useAppTranslations } from '@/hooks';
 import { useData } from '@/hooks/use-data';
-import { getBtnClx } from '@/shared/button';
 import { Icons } from '@/shared';
+import { getBtnClx } from '@/shared/button';
 
 type ItemProps = {
   title: string | ReactElement;

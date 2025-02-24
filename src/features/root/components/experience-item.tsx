@@ -1,16 +1,15 @@
 import React from 'react';
 
 import dayjs from 'dayjs';
-
 import Link from 'next/link';
 
 import { DEFAULT_DATE_FORMAT } from '@/constants';
 import ExperienceItemList from '@/features/root/components/experience-item-list';
 import { useAppTranslations } from '@/hooks';
 import useData from '@/hooks/use-data';
-import type { ExperienceItem, I18Data } from '@/types';
 import { Icons, Paper } from '@/shared';
 import { getBtnClx } from '@/shared/button';
+import type { ExperienceItem, I18Data } from '@/types';
 
 const ExperienceItemComponent: React.FC<ExperienceItem> = ({
   company,

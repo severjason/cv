@@ -2,9 +2,9 @@ import React from 'react';
 
 import ExperienceSubItemList from '@/features/root/components/experience-subitem-list';
 import { useAppTranslations, useData } from '@/hooks';
+import { Buttons, Icons } from '@/shared';
 import ListIcon from '@/shared/icons/list-icon';
 import type { ExperienceItem, I18Data, ListItem as ListItemType } from '@/types';
-import { Buttons, Icons } from '@/shared';
 
 type StackListProps = {
   stack?: string[];

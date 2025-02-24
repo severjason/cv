@@ -1,4 +1,5 @@
 import React from 'react';
+
 import clsx from 'clsx';
 
 const LinkedinIcon: React.FC<React.HTMLAttributes<HTMLOrSVGElement>> = ({ className, ...props }) => (

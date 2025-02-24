@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useAppTranslations } from '@/hooks';
 import { useData } from '@/hooks/use-data';
-import { Titles, Icons } from '@/shared';
+import { Icons, Titles } from '@/shared';
 import { EducationType } from '@/types';
 
 import EducationItemAdditional from './education-item-additional';
