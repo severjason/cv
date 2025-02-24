@@ -51,9 +51,7 @@ const Info = () => {
               className={getBtnClx({ variant: 'link' })}
               onClick={handleClick}
             >
-              <span className={'flex print:hidden'}>
-                {emailIsShown ? data?.main_info?.email : t('common:links.email')}
-              </span>
+              <span className={'flex'}>{emailIsShown ? data?.main_info?.email : t('common:links.email')}</span>
               <span className="hidden hover:flex">{data?.main_info?.email}</span>
             </Link>
           }
