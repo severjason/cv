@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React from 'react';
 
 import dayjs from 'dayjs';
 
@@ -24,16 +24,10 @@ const ExperienceItemComponent: React.FC<ExperienceItem> = ({
   const { t, lang } = useAppTranslations();
   const { parseI18Data } = useData();
 
-  const parsedCompany = useMemo(
-    () => (typeof company === 'string' ? company : parseI18Data(company as I18Data)),
-    [company, parseI18Data]
-  );
+  const parsedCompany = typeof company === 'string' ? company : parseI18Data(company as I18Data);
 
-  const getFormattedDate = useCallback(
-    (date: ExperienceItem['start_date'] | ExperienceItem['end_date']) =>
-      date === 'present' ? 'present' : dayjs(date).locale(lang)?.format?.(DEFAULT_DATE_FORMAT),
-    [lang]
-  );
+  const getFormattedDate = (date: ExperienceItem['start_date'] | ExperienceItem['end_date']) =>
+    date === 'present' ? 'present' : dayjs(date).locale(lang)?.format?.(DEFAULT_DATE_FORMAT);
 
   return (
     <Paper>

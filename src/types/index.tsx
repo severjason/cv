@@ -1,3 +1,5 @@
+import { JSX } from 'react';
+
 export type CVData = {
   main_info: CVMainInfo;
   profile: Profile;

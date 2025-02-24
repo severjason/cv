@@ -32,13 +32,11 @@ const getBtnClx = (config?: VariantProps<typeof buttonVariants>) => clsx(buttonV
 export type ButtonProps<T extends keyof JSX.IntrinsicElements = 'button'> = Omit<JSX.IntrinsicElements[T], 'size'> &
   VariantProps<typeof buttonVariants> & {
     component?: T;
+    ref?: React.ForwardedRef<ComponentProps<T>>;
   };
 
-function ButtonBase<T extends keyof JSX.IntrinsicElements = 'button'>(
-  props: ButtonProps<T>,
-  ref: React.ForwardedRef<ComponentProps<T>>
-) {
-  const { className, component = 'button', variant, size, ...rest } = props;
+function Button<T extends keyof JSX.IntrinsicElements = 'button'>(props: ButtonProps<T>) {
+  const { className, component = 'button', variant, size, ref, ...rest } = props;
   const Comp = component as React.ElementType;
   return (
     <Comp
@@ -51,8 +49,6 @@ function ButtonBase<T extends keyof JSX.IntrinsicElements = 'button'>(
   );
 }
 
-const Button = React.memo(React.forwardRef(ButtonBase)) as unknown as typeof ButtonBase;
-
-ButtonBase.displayName = 'Button';
+Button.displayName = 'Button';
 
 export { Button, getBtnClx };
