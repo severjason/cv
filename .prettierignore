@@ -4,3 +4,4 @@ node_modules
 .serverless_nextjs
 package-lock.json
 public
+next.config.js

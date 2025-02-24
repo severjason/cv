@@ -1,16 +1,15 @@
-import React, { useCallback, useMemo } from 'react';
+import React from 'react';
 
 import dayjs from 'dayjs';
-
 import Link from 'next/link';
 
 import { DEFAULT_DATE_FORMAT } from '@/constants';
 import ExperienceItemList from '@/features/root/components/experience-item-list';
 import { useAppTranslations } from '@/hooks';
 import useData from '@/hooks/use-data';
-import type { ExperienceItem, I18Data } from '@/types';
 import { Icons, Paper } from '@/shared';
 import { getBtnClx } from '@/shared/button';
+import type { ExperienceItem, I18Data } from '@/types';
 
 const ExperienceItemComponent: React.FC<ExperienceItem> = ({
   company,
@@ -24,16 +23,10 @@ const ExperienceItemComponent: React.FC<ExperienceItem> = ({
   const { t, lang } = useAppTranslations();
   const { parseI18Data } = useData();
 
-  const parsedCompany = useMemo(
-    () => (typeof company === 'string' ? company : parseI18Data(company as I18Data)),
-    [company, parseI18Data]
-  );
+  const parsedCompany = typeof company === 'string' ? company : parseI18Data(company as I18Data);
 
-  const getFormattedDate = useCallback(
-    (date: ExperienceItem['start_date'] | ExperienceItem['end_date']) =>
-      date === 'present' ? 'present' : dayjs(date).locale(lang)?.format?.(DEFAULT_DATE_FORMAT),
-    [lang]
-  );
+  const getFormattedDate = (date: ExperienceItem['start_date'] | ExperienceItem['end_date']) =>
+    date === 'present' ? 'present' : dayjs(date).locale(lang)?.format?.(DEFAULT_DATE_FORMAT);
 
   return (
     <Paper>

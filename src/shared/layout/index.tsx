@@ -14,7 +14,7 @@ const Layout: React.FC<Props> = ({ children, data, ...pageTitleProps }) => {
   return (
     <DataWrapper data={data}>
       <Titles.Page url={data?.main_info?.website} {...pageTitleProps} />
-      <div className="font-sans flex flex-col min-h-full bg-gray-100 max-w-screen-xl ml-auto mr-auto shadow-md">
+      <div className="font-sans flex flex-col min-h-full bg-gray-100 max-w-(--breakpoint-xl) ml-auto mr-auto shadow-md">
         <Header />
         <main>{children}</main>
         <Footer />

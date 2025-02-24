@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
 import { GetStaticProps, NextPage } from 'next';
 import App from 'src/features/root';
@@ -17,14 +17,11 @@ const HomePage: NextPage<Props> = ({ data }) => {
   const { lang } = useAppTranslations();
   const { getPosition, getFullName } = useData();
 
-  const framework = useMemo(() => (data?.main_info?.framework ? `(${data?.main_info?.framework})` : ''), [data]);
+  const framework = data?.main_info?.framework ? `(${data?.main_info?.framework})` : '';
 
-  const title = useMemo(
-    () => `${getFullName(data)} | ${getPosition(data)} ${framework}`,
-    [getFullName, getPosition, framework]
-  );
+  const title = `${getFullName(data)} | ${getPosition(data)} ${framework}`;
 
-  const description = useMemo(() => data?.profile?.short?.[lang] || '', [data]);
+  const description = data?.profile?.short?.[lang] || '';
 
   return (
     <Layout title={title} description={description} data={data}>

@@ -1,12 +1,14 @@
 import React from 'react';
 
-import localFont from 'next/font/local';
 import 'dayjs/locale/uk';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
+import localFont from 'next/font/local';
 
 import { Analytics } from '@/shared';
 import '@/styles/global.css';
+
+import packageJSON from '../package.json';
 
 const myFont = localFont({
   src: [
@@ -24,8 +26,6 @@ const myFont = localFont({
   ],
   variable: '--font-exo2',
 });
-
-import packageJSON from '../package.json';
 
 // Client-side cache, shared for the whole session of the user in the browser.
 console.info(`Current app version: ${packageJSON.version}`);

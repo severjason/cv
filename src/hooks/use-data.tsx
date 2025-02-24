@@ -1,4 +1,4 @@
-import React, { ReactNode, useCallback, useContext } from 'react';
+import React, { ReactNode, useContext } from 'react';
 
 import { useAppTranslations } from '@/hooks/index';
 import type { CVDataResponse, I18Data } from '@/types';
@@ -18,14 +18,12 @@ export function useData() {
   const data = useContext(DataContext);
   const { lang } = useAppTranslations();
 
-  const parseI18Data = useCallback(<T,>(data: I18Data<T>) => data?.[lang] || '', [lang]);
+  const parseI18Data = <T,>(data: I18Data<T>) => data?.[lang] || '';
 
-  const getFullName = useCallback(
-    (data: CVDataResponse) => `${data?.main_info?.first_name?.[lang]} ${data?.main_info?.last_name?.[lang]}`,
-    [lang]
-  );
+  const getFullName = (data: CVDataResponse) =>
+    `${data?.main_info?.first_name?.[lang]} ${data?.main_info?.last_name?.[lang]}`;
 
-  const getPosition = useCallback((data: CVDataResponse) => `${data?.main_info?.position?.[lang]}`, [lang]);
+  const getPosition = (data: CVDataResponse) => `${data?.main_info?.position?.[lang]}`;
 
   return {
     data,

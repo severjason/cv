@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
 import { useAppTranslations } from '@/hooks';
 import { useData } from '@/hooks/use-data';
@@ -9,13 +9,11 @@ const Profile = () => {
 
   const { data } = useData();
 
-  const profileData = useMemo(() => data?.profile?.full?.[lang], [data?.profile, lang]);
-
   return (
     <div>
       <Titles.Section icon={<Icons.Assignment />} text={`${t('common:profile')}`} />
       <Paper>
-        <p>{profileData}</p>
+        <p>{data?.profile?.full?.[lang]}</p>
       </Paper>
     </div>
   );

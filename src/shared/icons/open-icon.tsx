@@ -1,4 +1,5 @@
 import React from 'react';
+
 import clsx from 'clsx';
 
 const OpenIcon: React.FC<React.HTMLAttributes<HTMLOrSVGElement>> = ({ className, ...props }) => (

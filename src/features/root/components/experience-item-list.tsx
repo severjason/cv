@@ -2,9 +2,9 @@ import React from 'react';
 
 import ExperienceSubItemList from '@/features/root/components/experience-subitem-list';
 import { useAppTranslations, useData } from '@/hooks';
+import { Buttons, Icons } from '@/shared';
 import ListIcon from '@/shared/icons/list-icon';
 import type { ExperienceItem, I18Data, ListItem as ListItemType } from '@/types';
-import { Buttons, Icons } from '@/shared';
 
 type StackListProps = {
   stack?: string[];
@@ -64,7 +64,7 @@ const ExperienceItemList: React.FC<Props> = ({ list }) => {
                     className={'color-primary-950 my-0 mx-1 py-0 px-0'}
                     title={`${t('common:visit')}`}
                   >
-                    <Icons.Open className={'!w-4 !h-4'} />
+                    <Icons.Open className={'w-4! h-4!'} />
                   </Buttons.Button>
                 )}
               </span>

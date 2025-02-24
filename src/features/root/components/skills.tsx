@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
 import { useAppTranslations } from '@/hooks';
 import { useData } from '@/hooks/use-data';
@@ -11,18 +11,18 @@ const Skills = () => {
   const { t } = useAppTranslations();
   const { data } = useData();
 
-  const skillsData = useMemo(() => data?.skills, [data]);
+  if (!data?.skills) return null;
 
-  return skillsData ? (
+  return (
     <>
       <Titles.Section icon={<Icons.Keyboard />} text={`${t('common:skills.title')}`} />
       <Paper className="flex-1">
-        {Object.keys(skillsData).map(key => (
-          <Item key={key} title={key} skillsList={skillsData[key as keyof SkillsData]} />
+        {Object.keys(data.skills).map(key => (
+          <Item key={key} title={key} skillsList={data.skills[key as keyof SkillsData]} />
         ))}
       </Paper>
     </>
-  ) : null;
+  );
 };
 
 export default Skills;

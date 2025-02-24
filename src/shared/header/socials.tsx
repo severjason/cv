@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
 import { useAppTranslations } from '@/hooks';
 import { useData } from '@/hooks/use-data';
@@ -8,29 +8,26 @@ const Socials = () => {
   const { t } = useAppTranslations();
   const { data } = useData();
 
-  const socials = useMemo(
-    () => [
-      {
-        id: 'github',
-        title: t('common:social.github'),
-        href: data?.main_info?.github,
-        Icon: Icons.GitHub,
-      },
-      {
-        id: 'linkedIn',
-        title: t('common:social.linkedIn'),
-        href: data?.main_info?.linked_in,
-        Icon: Icons.LinkedIn,
-      },
-      {
-        id: 'facebook',
-        title: t('common:social.facebook'),
-        href: data?.main_info?.facebook,
-        Icon: Icons.Facebook,
-      },
-    ],
-    [t, data]
-  );
+  const socials = [
+    {
+      id: 'github',
+      title: t('common:social.github'),
+      href: data?.main_info?.github,
+      Icon: Icons.GitHub,
+    },
+    {
+      id: 'linkedIn',
+      title: t('common:social.linkedIn'),
+      href: data?.main_info?.linked_in,
+      Icon: Icons.LinkedIn,
+    },
+    {
+      id: 'facebook',
+      title: t('common:social.facebook'),
+      href: data?.main_info?.facebook,
+      Icon: Icons.Facebook,
+    },
+  ];
 
   return (
     <div className={'w-full flex justify-center bg-primary-950 print:hidden'}>
