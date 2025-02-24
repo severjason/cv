@@ -64,7 +64,7 @@ const ExperienceItemList: React.FC<Props> = ({ list }) => {
                     className={'color-primary-950 my-0 mx-1 py-0 px-0'}
                     title={`${t('common:visit')}`}
                   >
-                    <Icons.Open className={'!w-4 !h-4'} />
+                    <Icons.Open className={'w-4! h-4!'} />
                   </Buttons.Button>
                 )}
               </span>
