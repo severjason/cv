@@ -4,7 +4,7 @@ import { GetStaticProps, NextPage } from 'next';
 import App from 'src/features/root';
 
 import CvService from '@/api-lib/cv/cv.service';
-import { useAppTranslations, useData } from '@/hooks';
+import { useData } from '@/hooks';
 import { Layout } from '@/shared';
 import { CVDataResponse } from '@/types';
 import { ssrTranslations } from '@/utils/i18n';
@@ -14,14 +14,13 @@ type Props = {
 };
 
 const HomePage: NextPage<Props> = ({ data }) => {
-  const { lang } = useAppTranslations();
-  const { getPosition, getFullName } = useData();
+  const { fullName, position, parseI18Data } = useData(data);
 
   const framework = data?.main_info?.framework ? `(${data?.main_info?.framework})` : '';
 
-  const title = `${getFullName(data)} | ${getPosition(data)} ${framework}`;
+  const title = `${fullName} | ${position} ${framework}`;
 
-  const description = data?.profile?.short?.[lang] || '';
+  const description = parseI18Data(data?.profile?.short);
 
   return (
     <Layout title={title} description={description} data={data}>

@@ -9,72 +9,102 @@ import { getBtnClx } from '@/shared/button';
 
 type ItemProps = {
   title: string | ReactElement;
+  comment?: string;
   icon: ReactElement;
 };
 
-const Item: React.FC<ItemProps> = ({ title, icon }) => (
-  <div className="flex w-full pt-1 items-center">
+const Item: React.FC<ItemProps> = ({ title, icon, comment }) => (
+  <div className="flex w-full pt-1 items-center print:pt-0.5">
     <div className="flex">{icon}</div>
-    <div className="flex pl-2">{title}</div>
+    <div className="flex pl-2 items-baseline flex-col print:text-sm">
+      {title}
+      {comment && <span className="text-sm ">{comment}</span>}
+    </div>
   </div>
 );
 
-const Info = () => {
-  const { t, lang } = useAppTranslations();
+const EmailInfo = () => {
+  const { t } = useAppTranslations();
   const { data } = useData();
   const [emailIsShown, setEmailIsShown] = useState(false);
   const ref = useRef<HTMLAnchorElement>(null);
 
+  const email = data?.main_info?.email;
+
   const handleClick = (e: React.MouseEvent) => {
-    if (!emailIsShown) {
-      e.preventDefault();
-      if (ref.current) {
-        ref.current.href = `mailto:${data?.main_info?.email}`;
-      }
-      setEmailIsShown(true);
+    if (emailIsShown) return;
+    e.preventDefault();
+    if (ref.current) {
+      ref.current.href = `mailto:${email}`;
     }
+    setEmailIsShown(true);
   };
 
+  if (!email) return null;
+
   return (
-    <div className="flex w-full pt-2 flex-col">
-      {data?.main_info?.email ? (
-        <Item
-          icon={<Icons.Email className="fill-white" />}
-          title={
-            <Link
-              tabIndex={0}
-              ref={ref}
-              href="#"
-              target={'_blank'}
-              rel="noopener noreferrer"
-              title={t('common:links.email') as string}
-              className={getBtnClx({ variant: 'link' })}
-              onClick={handleClick}
-            >
-              <span className={'flex'}>{emailIsShown ? data?.main_info?.email : t('common:links.email')}</span>
-              <span className="hidden hover:flex">{data?.main_info?.email}</span>
-            </Link>
-          }
-        />
-      ) : null}
-      {data?.main_info?.location?.link ? (
-        <Item
-          icon={<Icons.Marker className="fill-white" />}
-          title={
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              href={data?.main_info?.location?.link}
-              title={t('common:links.location') as string}
-              className={getBtnClx({ variant: 'link' })}
-            >
-              {data?.main_info?.location?.title?.[lang]}
-            </Link>
-          }
-        />
-      ) : null}
-    </div>
+    <Item
+      icon={<Icons.Email className="fill-white" />}
+      title={
+        <Link
+          tabIndex={0}
+          ref={ref}
+          href="#"
+          target={'_blank'}
+          rel="noopener noreferrer"
+          title={t('common:links.email') as string}
+          className={getBtnClx({ variant: 'link' })}
+          onClick={handleClick}
+        >
+          <span className={'flex'}>{emailIsShown ? email : t('common:links.email')}</span>
+          <span className="hidden hover:flex">{email}</span>
+        </Link>
+      }
+    />
   );
 };
+
+const LocationInfo = () => {
+  const { t } = useAppTranslations();
+  const { data, parseI18Data } = useData();
+  const location = data?.main_info?.location;
+
+  if (!location) return null;
+
+  return (
+    <Item
+      icon={<Icons.Marker className="fill-white" />}
+      title={
+        <Link
+          target="_blank"
+          rel="noopener noreferrer"
+          href={location.link}
+          title={t('common:links.location') as string}
+          className={getBtnClx({ variant: 'link' })}
+        >
+          {parseI18Data(location.title)}
+        </Link>
+      }
+      comment={parseI18Data(location.comment)}
+    />
+  );
+};
+
+const FamilyInfo = () => {
+  const { data, parseI18Data } = useData();
+  const family = data?.main_info?.family;
+
+  if (!family) return null;
+
+  return <Item icon={<Icons.Family className="fill-white" />} title={parseI18Data(family)} />;
+};
+
+const Info = () => (
+  <div className="flex w-full pt-2 flex-col print:pt-1">
+    <EmailInfo />
+    <LocationInfo />
+    <FamilyInfo />
+  </div>
+);
 
 export default Info;

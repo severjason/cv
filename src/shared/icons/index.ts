@@ -14,4 +14,6 @@ export { default as GitHub } from './github-icon';
 export { default as Email } from './email-icon';
 export { default as Work } from './work-icon';
 export { default as UAflag } from './ua-flag';
-export { default as USflag } from './us-flag';
+export { default as DEflag } from './de-flag';
+export { default as GBflag } from './gb-flag';
+export { default as Family } from './family-icon';

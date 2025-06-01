@@ -3,7 +3,7 @@ import React from 'react';
 const ListIcon: React.FC = () => (
   <span className="flex items-center">
     <svg
-      className={'w-2 h-2 m-1 mr-2 md:mr-4 fill-primary-800'}
+      className={'w-1.5 h-1.5 m-1 mr-2 md:mr-3 fill-primary-800'}
       focusable="false"
       aria-hidden="true"
       viewBox="0 0 24 24"

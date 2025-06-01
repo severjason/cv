@@ -5,15 +5,15 @@ import { useData } from '@/hooks/use-data';
 import { Icons, Paper, Titles } from '@/shared';
 
 const Profile = () => {
-  const { t, lang } = useAppTranslations();
+  const { t } = useAppTranslations();
 
-  const { data } = useData();
+  const { data, parseI18Data } = useData();
 
   return (
     <div>
       <Titles.Section icon={<Icons.Assignment />} text={`${t('common:profile')}`} />
       <Paper>
-        <p>{data?.profile?.full?.[lang]}</p>
+        <p>{parseI18Data(data?.profile?.full)}</p>
       </Paper>
     </div>
   );

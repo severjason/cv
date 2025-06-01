@@ -2,17 +2,16 @@ import React from 'react';
 
 import ExperienceSubItemList from '@/features/root/components/experience-subitem-list';
 import { useAppTranslations, useData } from '@/hooks';
-import { Buttons, Icons } from '@/shared';
-import ListIcon from '@/shared/icons/list-icon';
-import type { ExperienceItem, I18Data, ListItem as ListItemType } from '@/types';
+import { Buttons, Icons, Titles } from '@/shared';
+import type { ExperienceItem } from '@/types';
 
 type StackListProps = {
   stack?: string[];
-  index: number;
+  index?: number;
   listLength?: number;
 };
 
-const StackList: React.FC<StackListProps> = ({ stack, listLength = 0, index }) => {
+const StackList: React.FC<StackListProps> = ({ stack, listLength = 0, index = 0 }) => {
   const { t } = useAppTranslations();
 
   if (!stack?.length) return null;
@@ -27,54 +26,43 @@ const StackList: React.FC<StackListProps> = ({ stack, listLength = 0, index }) =
   );
 };
 
-type Props = {
-  list: ExperienceItem['list'];
-};
-
-const ExperienceItemList: React.FC<Props> = ({ list }) => {
+const ExperienceItemList: React.FC<Pick<ExperienceItem, 'list' | 'stack'>> = ({ list, stack }) => {
   const { t } = useAppTranslations();
   const { parseI18Data } = useData();
-
-  const parsedTitle = (item: ListItemType) =>
-    typeof item.title === 'string' ? item.title : parseI18Data(item.title as I18Data);
 
   if (!list?.length) return null;
 
   return (
-    <ul>
-      {list.map((item, index) => (
-        <React.Fragment key={parseI18Data(item.text)}>
-          <li className="flex flex-col justify-center">
-            <div className="flex flex-nowrap">
-              {list?.length > 1 && <ListIcon />}
-              <span className={'flex-1 my-1'}>
-                {item.title && (
-                  <span>
-                    <span className={'font-semibold'}>{parsedTitle(item)}</span>
-                    {` - `}
-                  </span>
-                )}
-                {parseI18Data(item.text)}
-                {item.link && (
-                  <Buttons.Button
-                    component={'a'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={item.link}
-                    className={'color-primary-950 my-0 mx-1 py-0 px-0'}
-                    title={`${t('common:visit')}`}
-                  >
-                    <Icons.Open className={'w-4! h-4!'} />
-                  </Buttons.Button>
-                )}
-              </span>
-            </div>
-            <ExperienceSubItemList list={item.sub_items} />
-          </li>
-          <StackList stack={item?.stack} listLength={list?.length} index={index} />
-        </React.Fragment>
-      ))}
-    </ul>
+    <>
+      <ul>
+        {list.map((item, index) => (
+          <React.Fragment key={parseI18Data(item.text) || index}>
+            <li className="flex flex-col justify-center">
+              <div className="flex flex-nowrap">
+                <span className={'flex-1 my-1'}>
+                  <Titles.Text {...item} />
+                  {item.link && (
+                    <Buttons.Button
+                      component={'a'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={item.link}
+                      className={'color-primary-950 my-0 mx-1 py-0 px-0'}
+                      title={`${t('common:visit')}`}
+                    >
+                      <Icons.Open className={'w-4! h-4!'} />
+                    </Buttons.Button>
+                  )}
+                </span>
+              </div>
+              <ExperienceSubItemList list={item.sub_items} />
+            </li>
+            <StackList stack={item?.stack} listLength={list?.length} index={index} />
+          </React.Fragment>
+        ))}
+      </ul>
+      <StackList stack={stack} />
+    </>
   );
 };
 

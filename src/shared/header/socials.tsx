@@ -30,7 +30,7 @@ const Socials = () => {
   ];
 
   return (
-    <div className={'w-full flex justify-center bg-primary-950 print:hidden'}>
+    <div className={'w-full flex justify-center bg-primary-950 print:hidden md:rounded-bl-xs md:rounded-br-xs'}>
       {socials
         .filter(s => s.href)
         .map(({ Icon, href, title, id }) => (

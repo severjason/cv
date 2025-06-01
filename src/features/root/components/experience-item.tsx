@@ -19,6 +19,7 @@ const ExperienceItemComponent: React.FC<ExperienceItem> = ({
   list,
   location,
   link,
+  stack,
 }) => {
   const { t, lang } = useAppTranslations();
   const { parseI18Data } = useData();
@@ -66,7 +67,7 @@ const ExperienceItemComponent: React.FC<ExperienceItem> = ({
           <span className={'capitalize'}>{`${getFormattedDate(start_date)} - ${getFormattedDate(end_date)}`}</span>
         </div>
       </div>
-      <ExperienceItemList list={list} />
+      <ExperienceItemList list={list} stack={stack} />
     </Paper>
   );
 };

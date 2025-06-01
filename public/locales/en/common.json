@@ -1,10 +1,9 @@
 {
-  "langSwitch": "Switch to Ukrainian",
-  "paletteSwitchDark": "Switch to dark mode",
-  "paletteSwitchLight": "Switch to light mode",
+  "langSwitch": "Switch to German",
   "at": "at",
   "visit": "Visit",
   "profile": "Profile",
+  "photo": "photo",
   "links": {
     "email": "Email me",
     "phone": "Phone me",
@@ -18,7 +17,7 @@
   },
   "experience": {
     "title": "Experience",
-    "stack": "Technical stack"
+    "stack": "Tech stack"
   },
   "skills": {
     "title": "Skills",
