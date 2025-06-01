@@ -63,10 +63,6 @@ a:focus, a:focus-visible {
     text-size-adjust: 100%;
 }
 
-@page  {
-  margin: 0;
-  size: 1200px 1375px;
-}
 @media print {
   html {
     background-color: oklch(0.967 0.003 264.542);;

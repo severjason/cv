@@ -5,12 +5,12 @@ import useData from '@/hooks/use-data';
 import { Icons } from '@/shared';
 import type { SkillListItem } from '@/types';
 
-type Props = {
+type SkillsItemProps = {
   title: string;
   skillsList: SkillListItem[][];
 };
 
-const SkillsItem: React.FC<Props> = ({ title, skillsList }) => {
+const SkillsItem: React.FC<SkillsItemProps> = ({ title, skillsList }) => {
   const { t } = useAppTranslations();
   const { parseI18Data } = useData();
 

@@ -5,6 +5,7 @@ import Header from '@/shared/header';
 import * as Icons from '@/shared/icons';
 import Layout from '@/shared/layout';
 import { Paper } from '@/shared/paper';
+import PrintStyles from '@/shared/print-styles';
 import * as Titles from '@/shared/titles';
 
-export { Icons, Titles, Footer, Layout, Header, Analytics, Buttons, Paper };
+export { Icons, Titles, Footer, Layout, Header, Analytics, Buttons, Paper, PrintStyles };
