@@ -22,7 +22,8 @@
   "skills": {
     "title": "Навички",
     "primary": "Основні",
-    "secondary": "Додаткові"
+    "secondary": "Додаткові",
+    "soft": "Софт скіли"
   },
   "languages": {
     "title": "Мови"

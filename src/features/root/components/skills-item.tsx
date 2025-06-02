@@ -20,8 +20,20 @@ const SkillsItem: React.FC<SkillsItemProps> = ({ title, skillsList }) => {
     return listItem.important ? <span className={'font-semibold'}>{skill}</span> : skill;
   };
 
+  if (skillsList.length === 1)
+    return (
+      <div className="flex flex-col pb-1">
+        <p className="font-semibold">
+          {t(`common:skills.${title}`)}:
+          <span className={'pl-1 font-normal'}>
+            {skillsList[0].map((skill, index) => generateSkill(skill, index, skillsList[0].length))}
+          </span>
+        </p>
+      </div>
+    );
+
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col pb-1">
       <p className="font-semibold">{t(`common:skills.${title}`)}:</p>
       <ul>
         {skillsList.map((skills, index) => (

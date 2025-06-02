@@ -91,6 +91,7 @@ export type EducationDataBasic = {
 export type SkillsData = {
   primary: SkillListItem[][];
   secondary: SkillListItem[][];
+  soft: SkillListItem[][];
 };
 
 type SkillListItemBase = {

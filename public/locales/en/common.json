@@ -22,7 +22,8 @@
   "skills": {
     "title": "Skills",
     "primary": "Primary",
-    "secondary": "Secondary"
+    "secondary": "Secondary",
+    "soft": "Soft skills"
   },
   "languages": {
     "title": "Languages"

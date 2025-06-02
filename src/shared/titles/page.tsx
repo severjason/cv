@@ -4,17 +4,18 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import avatar from '@/assets/avatar.webp';
+import { useData } from '@/hooks';
 import { Locales } from '@/types';
 
 export type PageTitleProps = {
   title: string;
   description?: string;
-  url?: string;
 };
 
-const PageTitle: React.FC<PageTitleProps> = ({ title, description, url }) => {
+const PageTitle: React.FC<PageTitleProps> = ({ title, description }) => {
   const { locale } = useRouter();
-
+  const { data, fullName } = useData();
+  const url = data?.main_info?.website;
   return (
     <Head>
       <title>{title}</title>
@@ -29,6 +30,7 @@ const PageTitle: React.FC<PageTitleProps> = ({ title, description, url }) => {
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
       <meta name="msapplication-TileColor" content="#2b5797" />
       <meta name="theme-color" content="#ffffff" />
+      <meta name="author" content={fullName} />
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta property="og:type" content="website" />

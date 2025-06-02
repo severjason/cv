@@ -41,7 +41,7 @@ const ExperienceItemComponent: React.FC<ExperienceItem> = ({
                 <span>
                   {link ? (
                     <Link
-                      className={`font-semibold ${getBtnClx({ variant: 'link' })}`}
+                      className={`font-semibold text-lg! ${getBtnClx({ variant: 'link' })}`}
                       color="textPrimary"
                       target="_blank"
                       rel="noopener noreferrer"

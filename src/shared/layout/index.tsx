@@ -14,7 +14,7 @@ const Layout: React.FC<Props> = ({ children, data, ...pageTitleProps }) => {
   return (
     <DataWrapper data={data}>
       <PrintStyles />
-      <Titles.Page url={data?.main_info?.website} {...pageTitleProps} />
+      <Titles.Page {...pageTitleProps} />
       <div className="font-sans flex flex-col min-h-full  max-w-(--breakpoint-xl) ml-auto mr-auto shadow-md print:shadow-none">
         <Header />
         <main className="bg-gray-100">{children}</main>

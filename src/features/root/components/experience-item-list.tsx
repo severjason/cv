@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ExperienceSubItemList from '@/features/root/components/experience-subitem-list';
-import { useAppTranslations, useData } from '@/hooks';
+import { useAppTranslations } from '@/hooks';
 import { Buttons, Icons, Titles } from '@/shared';
 import type { ExperienceItem } from '@/types';
 
@@ -28,7 +28,6 @@ const StackList: React.FC<StackListProps> = ({ stack, listLength = 0, index = 0 
 
 const ExperienceItemList: React.FC<Pick<ExperienceItem, 'list' | 'stack'>> = ({ list, stack }) => {
   const { t } = useAppTranslations();
-  const { parseI18Data } = useData();
 
   if (!list?.length) return null;
 
@@ -36,7 +35,7 @@ const ExperienceItemList: React.FC<Pick<ExperienceItem, 'list' | 'stack'>> = ({ 
     <>
       <ul>
         {list.map((item, index) => (
-          <React.Fragment key={parseI18Data(item.text) || index}>
+          <React.Fragment key={item.text.en}>
             <li className="flex flex-col justify-center">
               <div className="flex flex-nowrap">
                 <span className={'flex-1 my-1'}>

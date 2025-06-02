@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import { useAppTranslations } from '@/hooks';
 import { useData } from '@/hooks/use-data';
+import { usePrint } from '@/hooks/use-print';
 import { Icons } from '@/shared';
 import { getBtnClx } from '@/shared/button';
 
@@ -29,6 +30,11 @@ const EmailInfo = () => {
   const [emailIsShown, setEmailIsShown] = useState(false);
   const ref = useRef<HTMLAnchorElement>(null);
 
+  const onShowEmail = () => setEmailIsShown(true);
+  const onHideEmail = () => setEmailIsShown(false);
+
+  usePrint({ onBeforePrint: onShowEmail, onAfterPrint: onHideEmail });
+
   const email = data?.main_info?.email;
 
   const handleClick = (e: React.MouseEvent) => {
@@ -37,7 +43,7 @@ const EmailInfo = () => {
     if (ref.current) {
       ref.current.href = `mailto:${email}`;
     }
-    setEmailIsShown(true);
+    onShowEmail();
   };
 
   if (!email) return null;
@@ -67,27 +73,26 @@ const EmailInfo = () => {
 const LocationInfo = () => {
   const { t } = useAppTranslations();
   const { data, parseI18Data } = useData();
+  const { isPrinting } = usePrint();
   const location = data?.main_info?.location;
 
   if (!location) return null;
 
-  return (
-    <Item
-      icon={<Icons.Marker className="fill-white" />}
-      title={
-        <Link
-          target="_blank"
-          rel="noopener noreferrer"
-          href={location.link}
-          title={t('common:links.location') as string}
-          className={getBtnClx({ variant: 'link' })}
-        >
-          {parseI18Data(location.title)}
-        </Link>
-      }
-      comment={parseI18Data(location.comment)}
-    />
+  const title = !isPrinting ? (
+    <Link
+      target="_blank"
+      rel="noopener noreferrer"
+      href={location.link}
+      title={t('common:links.location') as string}
+      className={getBtnClx({ variant: 'link' })}
+    >
+      {parseI18Data(location.title)}
+    </Link>
+  ) : (
+    parseI18Data(location.title)
   );
+
+  return <Item icon={<Icons.Marker className="fill-white" />} title={title} comment={parseI18Data(location.comment)} />;
 };
 
 const FamilyInfo = () => {

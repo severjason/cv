@@ -13,7 +13,7 @@ const buttonVariants = cva(
       variant: {
         default: 'bg-primary text-primary-foreground hover:bg-primary/90',
         link: 'text-base! text-primary underline-offset-4 hover:underline focus-visible:underline',
-        icon: 'rounded-full hover:bg-black/[.04] focus:outline-hidden focus-visible:outline-hidden focus:bg-black/[.05] p-2',
+        icon: 'rounded-full hover:bg-black/[.04] focus:outline-hidden focus-visible:outline-hidden p-2 focus-visible:border-gray-300 focus-visible:border',
       },
       size: {
         default: '',

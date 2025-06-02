@@ -13,18 +13,18 @@ import packageJSON from '../package.json';
 const myFont = localFont({
   src: [
     {
-      path: '../src/assets/fonts/Exo2-Regular.ttf',
+      path: '../src/assets/fonts/Roboto-Regular.ttf',
 
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../src/assets/fonts/Exo2-SemiBold.ttf',
+      path: '../src/assets/fonts/Roboto-SemiBold.ttf',
       weight: '600',
       style: 'normal',
     },
   ],
-  variable: '--font-exo2',
+  variable: '--font-cv',
 });
 
 // Client-side cache, shared for the whole session of the user in the browser.
