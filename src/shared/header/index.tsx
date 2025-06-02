@@ -7,7 +7,7 @@ import Titles from './titles';
 
 const Header = () => (
   <header>
-    <div className="relative p-2 bg-primary-800 ">
+    <div className="relative p-2 bg-primary-800 md:rounded-tl-xs md:rounded-tr-xs print:py-0">
       <div className="flex justify-center items-center top-0 right-0 absolute p-1">
         <LangSwitcher />
       </div>

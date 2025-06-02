@@ -23,6 +23,7 @@ export type CVMainInfo = {
   framework: string;
   email: string;
   location: CVMainInfoLocation;
+  family: I18Data;
   github: string;
   website: string;
   facebook: string;
@@ -32,11 +33,13 @@ export type CVMainInfo = {
 export type CVMainInfoLocation = {
   title: I18Data;
   link: string;
+  comment?: I18Data;
 };
 
 export type I18Data<T = string> = {
   en: T;
   uk: T;
+  de: T;
 };
 
 export type ExperienceItem = {
@@ -47,13 +50,19 @@ export type ExperienceItem = {
   list: ListItem[];
   location: I18Data;
   link?: string;
+  stack?: string[];
+};
+
+export type ListSubItem = {
+  text: I18Data;
+  title?: string | I18Data;
 };
 
 export type ListItem = {
   text: I18Data;
   title?: string | I18Data;
   link?: string;
-  sub_items?: I18Data[];
+  sub_items?: ListSubItem[];
   stack?: string[];
 };
 
@@ -82,12 +91,14 @@ export type EducationDataBasic = {
 export type SkillsData = {
   primary: SkillListItem[][];
   secondary: SkillListItem[][];
+  soft: SkillListItem[][];
 };
 
-export type SkillListItem = {
-  name: string;
+type SkillListItemBase = {
   important?: boolean;
 };
+
+export type SkillListItem = SkillListItemBase & ({ name: string } | I18Data);
 
 export type LanguageItem = {
   title: I18Data;
@@ -97,6 +108,7 @@ export type LanguageItem = {
 export enum Locales {
   en = 'en',
   uk = 'uk',
+  de = 'de',
 }
 
 export enum LocaleNamespaces {

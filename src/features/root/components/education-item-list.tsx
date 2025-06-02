@@ -16,7 +16,7 @@ const EducationItemList: React.FC<Props> = ({ list }) => {
   return (
     <ul className="w-full">
       {list?.map(item => (
-        <li className="flex p-0" key={parseI18Data(item)}>
+        <li className="flex p-0" key={item.en}>
           {list?.length > 1 && <Icons.List />}
           <span className="py-1">{parseI18Data(item)}</span>
         </li>

@@ -7,7 +7,7 @@ import { Icons, Titles } from '@/shared';
 import ExperienceItem from './experience-item';
 
 const Experience = () => {
-  const { t } = useAppTranslations();
+  const { t, lang } = useAppTranslations();
   const { data } = useData();
 
   if (!data?.experience?.length) return null;
@@ -15,8 +15,8 @@ const Experience = () => {
   return (
     <div>
       <Titles.Section icon={<Icons.Work />} text={`${t('common:experience.title')}`} />
-      {data.experience.map((exp, index) => (
-        <ExperienceItem key={index} {...exp} />
+      {data.experience.map(exp => (
+        <ExperienceItem key={`${exp.start_date}-${lang}`} {...exp} />
       ))}
     </div>
   );

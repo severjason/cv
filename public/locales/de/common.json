@@ -1,0 +1,34 @@
+{
+  "langSwitch": "Wechsle zu Ukrainisch",
+  "at": "bei",
+  "visit": "Besuchen",
+  "profile": "Profil",
+  "photo": "Foto",
+  "links": {
+    "email": "Schreib mir eine E-Mail",
+    "phone": "Ruf mich an",
+    "location": "Mein Standort"
+  },
+  "social": {
+    "github": "Sieh dir mein GitHub an",
+    "linkedIn": "Folge mir auf LinkedIn",
+    "facebook": "Folge mir auf Facebook",
+    "website": "Meine Website"
+  },
+  "experience": {
+    "title": "Berufserfahrung",
+    "stack": "Technologien"
+  },
+  "skills": {
+    "title": "Fähigkeiten",
+    "primary": "Primär",
+    "secondary": "Sekundär",
+    "soft": "Soft Skills"
+  },
+  "languages": {
+    "title": "Sprachen"
+  },
+  "education": {
+    "title": "Ausbildung"
+  }
+}

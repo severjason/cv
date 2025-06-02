@@ -14,24 +14,20 @@ export const DataWrapper: React.FC<DataWrapperProps> = ({ children, data }) => {
   return <DataContext.Provider value={data}>{children}</DataContext.Provider>;
 };
 
-export function useData() {
-  const data = useContext(DataContext);
+export function useData(outerData?: CVDataResponse) {
+  const contextData = useContext(DataContext);
+  const data = outerData || contextData;
   const { lang } = useAppTranslations();
 
-  const parseI18Data = <T,>(data: I18Data<T>) => data?.[lang] || '';
+  const parseI18Data = <T,>(data?: I18Data<T>) => data?.[lang] || data?.en || '';
 
-  const getFullName = (data: CVDataResponse) =>
-    `${data?.main_info?.first_name?.[lang]} ${data?.main_info?.last_name?.[lang]}`;
-
-  const getPosition = (data: CVDataResponse) => `${data?.main_info?.position?.[lang]}`;
+  const fullName = `${parseI18Data(data?.main_info?.first_name)} ${parseI18Data(data?.main_info?.last_name)}`;
 
   return {
     data,
     parseI18Data,
-    getFullName,
-    getPosition,
-    fullName: getFullName(data),
-    position: getPosition(data),
+    fullName,
+    position: `${parseI18Data(data?.main_info?.position)}`,
   };
 }
 
