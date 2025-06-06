@@ -24,8 +24,8 @@ const SkillsItem: React.FC<SkillsItemProps> = ({ title, skillsList }) => {
     return (
       <div className="flex flex-col pb-1">
         <p className="font-semibold">
-          {t(`common:skills.${title}`)}:
-          <span className={'pl-1 font-normal'}>
+          {t(`common:skills.${title}`)}:<br />
+          <span className={'font-normal'}>
             {skillsList[0].map((skill, index) => generateSkill(skill, index, skillsList[0].length))}
           </span>
         </p>

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import 'dayjs/locale/de';
 import 'dayjs/locale/uk';
 import { appWithTranslation } from 'next-i18next';
 import { AppProps } from 'next/app';
