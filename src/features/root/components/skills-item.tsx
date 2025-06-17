@@ -17,7 +17,13 @@ const SkillsItem: React.FC<SkillsItemProps> = ({ title, skillsList }) => {
   const generateSkill = (listItem: SkillListItem, index: number, length: number) => {
     const name = 'name' in listItem ? listItem.name : parseI18Data(listItem);
     const skill = `${name}${length < 2 || index === length - 1 ? '.' : ', '}`;
-    return listItem.important ? <span className={'font-semibold'}>{skill}</span> : skill;
+    return listItem.important ? (
+      <span key={skill} className={'font-semibold'}>
+        {skill}
+      </span>
+    ) : (
+      skill
+    );
   };
 
   if (skillsList.length === 1)

@@ -12,6 +12,7 @@ export type CVData = {
 export type CVDataResponse = CVData | null | undefined;
 
 export type Profile = {
+  start_year: number;
   full: I18Data;
   short: I18Data;
 };
@@ -48,7 +49,7 @@ export type ExperienceItem = {
   company?: I18Data | string;
   role: I18Data;
   list: ListItem[];
-  location: I18Data;
+  location?: I18Data;
   link?: string;
   stack?: string[];
 };
@@ -58,8 +59,12 @@ export type ListSubItem = {
   title?: string | I18Data;
 };
 
+type ListItemText = I18Data & {
+  is_list?: boolean;
+};
+
 export type ListItem = {
-  text: I18Data;
+  text: ListItemText;
   title?: string | I18Data;
   link?: string;
   sub_items?: ListSubItem[];

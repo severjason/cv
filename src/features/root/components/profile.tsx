@@ -7,13 +7,15 @@ import { Icons, Paper, Titles } from '@/shared';
 const Profile = () => {
   const { t } = useAppTranslations();
 
-  const { data, parseI18Data } = useData();
+  const { data, parseI18Data, yearsOfExperience } = useData();
+
+  if (!data) return null;
 
   return (
     <div>
       <Titles.Section icon={<Icons.Assignment />} text={`${t('common:profile')}`} />
       <Paper>
-        <p>{parseI18Data(data?.profile?.full)}</p>
+        <p>{parseI18Data(data.profile.full).replace('[year]', yearsOfExperience)}</p>
       </Paper>
     </div>
   );

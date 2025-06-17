@@ -28,7 +28,6 @@ const EmailInfo = () => {
   const { t } = useAppTranslations();
   const { data } = useData();
   const [emailIsShown, setEmailIsShown] = useState(false);
-  const ref = useRef<HTMLAnchorElement>(null);
 
   const onShowEmail = () => setEmailIsShown(true);
   const onHideEmail = () => setEmailIsShown(false);
@@ -37,12 +36,14 @@ const EmailInfo = () => {
 
   const email = data?.main_info?.email;
 
-  const handleClick = (e: React.MouseEvent) => {
-    if (emailIsShown) return;
+  const handleCopy = async () => {
+    if (!email) return;
+    await navigator.clipboard.writeText(email);
+  };
+
+  const handleClick = async (e: React.MouseEvent) => {
+    if (emailIsShown) return handleCopy();
     e.preventDefault();
-    if (ref.current) {
-      ref.current.href = `mailto:${email}`;
-    }
     onShowEmail();
   };
 
@@ -52,19 +53,14 @@ const EmailInfo = () => {
     <Item
       icon={<Icons.Email className="fill-white" />}
       title={
-        <Link
-          tabIndex={0}
-          ref={ref}
-          href="#"
-          target={'_blank'}
-          rel="noopener noreferrer"
-          title={t('common:links.email') as string}
+        <p
+          title={t(emailIsShown ? 'common:emailCopy' : 'common:links.email')}
           className={getBtnClx({ variant: 'link' })}
           onClick={handleClick}
         >
           <span className={'flex'}>{emailIsShown ? email : t('common:links.email')}</span>
           <span className="hidden hover:flex">{email}</span>
-        </Link>
+        </p>
       }
     />
   );

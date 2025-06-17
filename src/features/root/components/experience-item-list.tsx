@@ -20,8 +20,9 @@ const StackList: React.FC<StackListProps> = ({ stack, listLength = 0, index = 0 
   const isSingle = listLength <= 1;
 
   return (
-    <p className={`italic ${isLast ? 'pb-0' : 'pb-2'} ${isSingle ? 'pl-0' : 'pl-4 md:pl-8'}`}>
-      {`${t('common:experience.stack')}: ${stack?.join(', ')}.`}
+    <p className={`${isLast ? 'pb-0' : 'pb-2'} ${isSingle ? 'pl-0' : 'pl-4 md:pl-8'}`}>
+      <span className={'pr-0.5 font-semibold'}>{`${t('common:experience.stack')}:`}</span>
+      {`${stack?.join(', ')}.`}
     </p>
   );
 };
@@ -38,6 +39,7 @@ const ExperienceItemList: React.FC<Pick<ExperienceItem, 'list' | 'stack'>> = ({ 
           <React.Fragment key={item.text.en}>
             <li className="flex flex-col justify-center">
               <div className="flex flex-nowrap">
+                {list?.length > 1 && !!item.text.is_list && <Icons.List />}
                 <span className={'flex-1 my-1'}>
                   <Titles.Text {...item} />
                   {item.link && (
@@ -54,7 +56,7 @@ const ExperienceItemList: React.FC<Pick<ExperienceItem, 'list' | 'stack'>> = ({ 
                   )}
                 </span>
               </div>
-              <ExperienceSubItemList list={item.sub_items} />
+              <ExperienceSubItemList list={item.sub_items} hasParentList={item.text.is_list} />
             </li>
             <StackList stack={item?.stack} listLength={list?.length} index={index} />
           </React.Fragment>

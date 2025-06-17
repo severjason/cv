@@ -26,7 +26,7 @@ const ExperienceItemComponent: React.FC<ExperienceItem> = ({
 
   const parsedCompany = typeof company === 'string' ? company : parseI18Data(company as I18Data);
 
-  const getFormattedDate = (date: ExperienceItem['start_date'] | ExperienceItem['end_date']) =>
+  const getFormattedDate = (date: string) =>
     date === 'present' ? 'present' : dayjs(date).locale(lang)?.format?.(DEFAULT_DATE_FORMAT);
 
   return (
@@ -58,10 +58,12 @@ const ExperienceItemComponent: React.FC<ExperienceItem> = ({
             ) : null}
           </p>
         </div>
-        <div className="container flex items-center">
-          <Icons.Marker className={'mr-2 p-0 '} />
-          <span className={'text-primary-800'}>{parseI18Data(location)}</span>
-        </div>
+        {location && (
+          <div className="container flex items-center">
+            <Icons.Marker className={'mr-2 p-0 '} />
+            <span className={'text-primary-800'}>{parseI18Data(location)}</span>
+          </div>
+        )}
         <div className={'flex container items-center pr-2 fill-primary-800 text-primary-800'}>
           <Icons.Calendar className="mr-2" />
           <span className={'capitalize'}>{`${getFormattedDate(start_date)} - ${getFormattedDate(end_date)}`}</span>

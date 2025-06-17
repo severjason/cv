@@ -14,13 +14,11 @@ type Props = {
 };
 
 const HomePage: NextPage<Props> = ({ data }) => {
-  const { fullName, position, parseI18Data } = useData(data);
+  const { fullName, position, parseI18Data, yearsOfExperience } = useData(data);
 
-  const framework = data?.main_info?.framework ? `(${data?.main_info?.framework})` : '';
+  const title = `${fullName} | ${position}`;
 
-  const title = `${fullName} | ${position} ${framework}`;
-
-  const description = parseI18Data(data?.profile?.short);
+  const description = parseI18Data(data?.profile?.short).replace('[year]', yearsOfExperience);
 
   return (
     <Layout title={title} description={description} data={data}>

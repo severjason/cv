@@ -13,7 +13,7 @@ const TextTitle: React.FC<Pick<ListItem, 'title' | 'text'>> = ({ title, text }) 
   return (
     <span>
       <span className={'font-semibold'}>{parsedTitle}</span>
-      {` - `}
+      {` `}
       {parseI18Data(text)}
     </span>
   );
