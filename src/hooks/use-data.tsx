@@ -32,7 +32,8 @@ export function useData(outerData?: CVDataResponse) {
     parseI18Data,
     fullName,
     yearsOfExperience,
-    position: `${parseI18Data(data?.main_info?.position)}`,
+    position: parseI18Data(data?.main_info?.position),
+    specialization: data?.main_info?.specialization,
   };
 }
 

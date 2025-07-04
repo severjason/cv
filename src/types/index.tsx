@@ -21,7 +21,7 @@ export type CVMainInfo = {
   first_name: I18Data;
   last_name: I18Data;
   position: I18Data;
-  framework: string;
+  specialization: string;
   email: string;
   location: CVMainInfoLocation;
   family: I18Data;
