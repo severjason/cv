@@ -4,9 +4,9 @@ import { useAppTranslations } from '@/hooks';
 import { Locales } from '@/types';
 
 const PAGE_SIZE: Record<Locales, string> = {
-  [Locales.en]: '1280px 3030px',
-  [Locales.de]: '1280px 3200px',
-  [Locales.uk]: '1280px 3180px',
+  [Locales.en]: '1280px 3060px',
+  [Locales.de]: '1280px 3230px',
+  [Locales.uk]: '1280px 3210px',
 };
 
 const PrintStyles = () => {
