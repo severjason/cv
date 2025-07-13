@@ -17,3 +17,4 @@ export { default as UAflag } from './ua-flag';
 export { default as DEflag } from './de-flag';
 export { default as GBflag } from './gb-flag';
 export { default as Family } from './family-icon';
+export { default as Link } from './link-icon';

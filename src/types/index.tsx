@@ -15,6 +15,7 @@ export type Profile = {
   start_year: number;
   full: I18Data;
   short: I18Data;
+  recommendations_link?: string;
 };
 
 export type CVMainInfo = {

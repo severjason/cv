@@ -1,11 +1,9 @@
 import React, { ReactElement, useState } from 'react';
 
-import Link from 'next/link';
-
 import { useAppTranslations } from '@/hooks';
 import { useData } from '@/hooks/use-data';
 import { usePrint } from '@/hooks/use-print';
-import { Icons } from '@/shared';
+import { Buttons, Icons } from '@/shared';
 import { getBtnClx } from '@/shared/button';
 
 type ItemProps = {
@@ -75,15 +73,9 @@ const LocationInfo = () => {
   if (!location) return null;
 
   const title = !isPrinting ? (
-    <Link
-      target="_blank"
-      rel="noopener noreferrer"
-      href={location.link}
-      title={t('common:links.location') as string}
-      className={getBtnClx({ variant: 'link' })}
-    >
+    <Buttons.Link href={location.link} title={t('common:links.location') as string}>
       {parseI18Data(location.title)}
-    </Link>
+    </Buttons.Link>
   ) : (
     parseI18Data(location.title)
   );

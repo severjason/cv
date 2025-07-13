@@ -6,6 +6,8 @@ import { JSX } from 'react';
 import { type VariantProps, cva } from 'class-variance-authority';
 import clsx from 'clsx';
 
+import { LinkButton } from './link';
+
 const buttonVariants = cva(
   'inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-1 focus-visible:outline-primary-900 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:cursor-pointer',
   {
@@ -51,4 +53,4 @@ function Button<T extends keyof JSX.IntrinsicElements = 'button'>(props: ButtonP
 
 Button.displayName = 'Button';
 
-export { Button, getBtnClx };
+export { Button, getBtnClx, LinkButton as Link };
