@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import 'dayjs/locale/de';
 import 'dayjs/locale/uk';
 import { appWithTranslation } from 'next-i18next';
@@ -40,7 +41,7 @@ const CVApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         }
       `}</style>
       <Analytics.Gtag />
-
+      <SpeedInsights />
       <Component {...pageProps} />
     </>
   );
