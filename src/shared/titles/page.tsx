@@ -7,6 +7,8 @@ import avatar from '@/assets/avatar.webp';
 import { useData } from '@/hooks';
 import { Locales } from '@/types';
 
+import packageJSON from '../../../package.json';
+
 export type PageTitleProps = {
   title: string;
   description?: string;
@@ -16,6 +18,7 @@ const PageTitle: React.FC<PageTitleProps> = ({ title, description }) => {
   const { locale } = useRouter();
   const { data, fullName } = useData();
   const url = data?.main_info?.website;
+  const avatarUrl = `${avatar.src}?v=${packageJSON.version}`;
   return (
     <Head>
       <title>{title}</title>
@@ -37,13 +40,13 @@ const PageTitle: React.FC<PageTitleProps> = ({ title, description }) => {
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={avatar.src} />
+      <meta property="og:image" content={avatarUrl} />
       <link rel="canonical" href={`${url}${locale === Locales.en ? '' : `/${locale}`}`} />
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={url} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={avatar.src} />
+      <meta property="twitter:image" content={avatarUrl} />
     </Head>
   );
 };
