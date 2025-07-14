@@ -8,7 +8,7 @@
 
 Next.js application
 
-Main technologies - React, Typescript, Material-UI.
+Main technologies - React, Typescript, TailwindCSS.
 
 You can learn more in the [Next.js documentation](https://nextjs.org/docs/getting-started).
 
