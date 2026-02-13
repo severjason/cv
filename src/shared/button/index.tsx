@@ -1,7 +1,6 @@
 'use client';
 
-import React, { ComponentProps } from 'react';
-import { JSX } from 'react';
+import React, { ComponentProps, JSX } from 'react';
 
 import { type VariantProps, cva } from 'class-variance-authority';
 import clsx from 'clsx';
