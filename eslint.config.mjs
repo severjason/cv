@@ -1,13 +1,6 @@
-import { fixupPluginRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import nextPlugin from '@next/eslint-plugin-next';
-import tsPlugin from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
-import importPlugin from 'eslint-plugin-import';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -47,11 +40,6 @@ export default [
     files: ['**/*.{js,jsx,ts,tsx}'],
 
     plugins: {
-      '@typescript-eslint': tsPlugin,
-      import: fixupPluginRules(importPlugin),
-      'jsx-a11y': jsxA11y,
-      react,
-      'react-hooks': fixupPluginRules(reactHooks),
       '@next/next': nextPlugin,
     },
 
@@ -60,7 +48,6 @@ export default [
         ...globals.browser,
         ...globals.node,
       },
-      parser: tsParser,
       ecmaVersion: 2020,
       sourceType: 'module',
       parserOptions: {
