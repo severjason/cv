@@ -11,7 +11,7 @@ const Header = () => (
       <div className="flex justify-center items-center top-0 right-0 absolute p-1">
         <LangSwitcher />
       </div>
-      <div className="flex w-full justify-center items-center flex-col md:flex-row">
+      <div className="flex w-full justify-center items-center flex-col md:flex-row print:flex-row">
         <Photo />
         <Titles />
       </div>
