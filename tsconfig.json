@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -17,23 +21,49 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/root/*": ["./*"],
-      "@/api-lib/*": ["./api-lib/*"],
-      "@/database/*": ["./database/*"],
-      "@/*": ["src/*"],
-      "@/features/*": ["src/features/*"],
-      "@/assets/*": ["src/assets/*"],
-      "@/shared/*": ["src/shared/*"],
-      "@/shared": ["src/shared"],
-      "@/types": ["src/types"],
-      "@/hooks": ["src/hooks"],
-      "@/hooks/*": ["src/hooks/*"],
-      "@/utils/*": ["src/utils/*"],
-      "@/styles/*": ["src/styles/*"]
+      "@/root/*": [
+        "./*"
+      ],
+      "@/api-lib/*": [
+        "./api-lib/*"
+      ],
+      "@/database/*": [
+        "./database/*"
+      ],
+      "@/*": [
+        "src/*"
+      ],
+      "@/features/*": [
+        "src/features/*"
+      ],
+      "@/assets/*": [
+        "src/assets/*"
+      ],
+      "@/shared/*": [
+        "src/shared/*"
+      ],
+      "@/shared": [
+        "src/shared"
+      ],
+      "@/types": [
+        "src/types"
+      ],
+      "@/hooks": [
+        "src/hooks"
+      ],
+      "@/hooks/*": [
+        "src/hooks/*"
+      ],
+      "@/utils/*": [
+        "src/utils/*"
+      ],
+      "@/styles/*": [
+        "src/styles/*"
+      ]
     }
   },
   "exclude": [

@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
-const { i18n } = require('./next-i18next.config');
+const { i18n } = require('./next-i18next.config.js');
+
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
@@ -11,6 +12,7 @@ const withPWA = require('next-pwa')({
 
 const nextConfig = withBundleAnalyzer(
   withPWA({
+    turbopack: {},
     reactStrictMode: true,
     i18n,
   })
