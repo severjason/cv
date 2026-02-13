@@ -26,6 +26,7 @@ export default [
       'public/sw.js',
       'public/sw.js.map',
       'next.config.*',
+      'next-env.d.ts',
     ],
   },
 
@@ -60,15 +61,7 @@ export default [
     },
 
     rules: {
-      // ✅ Next.js rules applied the correct way for flat config
       ...nextPlugin.configs.recommended.rules,
-      // If you want stricter:
-      // ...nextPlugin.configs['core-web-vitals'].rules,
-
-      'import/first': 'error',
-      'import/no-amd': 'error',
-      'import/no-webpack-loader-syntax': 'error',
-      'import/no-anonymous-default-export': 0,
 
       'react/forbid-foreign-prop-types': ['warn', { allowInPropTypes: true }],
       'react/jsx-no-comment-textnodes': 'warn',
@@ -77,7 +70,6 @@ export default [
       'react/jsx-no-undef': 'error',
       'react/jsx-pascal-case': ['warn', { allowAllCaps: true, ignore: [] }],
 
-      'react-hooks/exhaustive-deps': 'warn',
       'react/jsx-uses-react': 'warn',
       'react/jsx-uses-vars': 'warn',
       'react/no-danger-with-children': 'warn',

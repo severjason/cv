@@ -35,7 +35,7 @@ console.info(`Current app version: ${packageJSON.version}`);
 const CVApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
-      <style jsx global>{`
+      <style>{`
         html {
           font-family: ${myFont.style.fontFamily};
         }

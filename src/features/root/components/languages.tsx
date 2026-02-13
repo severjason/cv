@@ -15,7 +15,11 @@ const Languages = () => {
   return (
     <div>
       <Titles.Section icon={<Icons.Globe />} text={`${t('common:languages.title')}`} />
-      <Paper>{data?.languages?.map(lang => <Item key={lang.title.en} {...lang} />)}</Paper>
+      <Paper>
+        {data?.languages?.map(lang => (
+          <Item key={lang.title.en} {...lang} />
+        ))}
+      </Paper>
     </div>
   );
 };
