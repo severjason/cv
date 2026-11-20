@@ -3,7 +3,7 @@ import React from 'react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import 'dayjs/locale/de';
 import 'dayjs/locale/uk';
-import { appWithTranslation } from 'next-i18next';
+import { appWithTranslation } from 'next-i18next/pages';
 import { AppProps } from 'next/app';
 import localFont from 'next/font/local';
 

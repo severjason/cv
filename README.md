@@ -17,9 +17,9 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Development
 
-1. Install dependencies - run `npm run install` from _root_ dir:
+1. With Node.js 22.22.1 or later, install dependencies from the project root:
    ```sh
-   npm run install
+   npm ci
    ```
 2. Start development server:
    ```sh
@@ -80,6 +80,8 @@ The root of project contains common configuration file like _.gitignore_, _.esli
 
 
 ## Environment variables
+
+Set `DATABASE_URL` in `.env.local` to a reachable MongoDB database containing a CV document with `type: "current"`. The app loads the CV when a visitor requests the page. The build and version API can run without a database connection.
 
 | VAR                 | Description         |
 |---------------------|---------------------|
