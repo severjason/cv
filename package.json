@@ -10,13 +10,13 @@
     "start": "next start",
     "tscheck": "next typegen && tsc --pretty --noEmit",
     "format": "prettier --write '**/*.{js,ts,tsx}' -u",
-    "lint": "eslint .",
+    "lint": "oxlint . && prettier --check \"**/*.{js,ts,tsx,mjs}\" -u",
     "prepare": "husky"
   },
   "lint-staged": {
     "*.@(ts|tsx)": [
-      "npm run lint",
-      "npm run format"
+      "prettier --write",
+      "oxlint"
     ]
   },
   "babel": {
@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@next/bundle-analyzer": "^16.4.6",
+    "@serwist/next": "^9.5.15",
     "@vercel/speed-insights": "^2.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -35,50 +36,26 @@
     "next": "^16.4.6",
     "next-connect": "^1.0.0",
     "next-i18next": "^16.5.1",
-    "next-pwa": "^5.6.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-i18next": "^18.0.3",
     "sharp": "^0.35.5"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.1.1",
-    "@eslint/js": "^9.39.5",
     "@tailwindcss/postcss": "^4.3.5",
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
-    "eslint": "^9.39.5",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-import-resolver-typescript": "^4.4.5",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.5.7",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.8",
-    "globals": "^17.14.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.6.1",
+    "oxlint": "^1.94.0",
     "postcss": "^8.5.33",
     "prettier": "^3.10.1",
+    "serwist": "^9.5.15",
     "tailwindcss": "^4.3.5",
-    "typescript": "~6.0.0",
-    "typescript-eslint": "^8.73.0"
+    "typescript": "~7.0.2"
   },
   "engines": {
     "node": ">=22.22.1"
-  },
-  "overrides": {
-    "next-pwa": {
-      "workbox-webpack-plugin": "^7.4.1",
-      "workbox-window": "^7.4.1"
-    },
-    "workbox-build": {
-      "glob": "^14.0.6"
-    },
-    "@trivago/prettier-plugin-sort-imports": {
-      "minimatch": "^11.0.9"
-    }
   }
 }

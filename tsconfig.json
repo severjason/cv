@@ -70,7 +70,8 @@
     "node_modules",
     ".next",
     "out",
-    "build"
+    "build",
+    "public/sw.js"
   ],
   "include": [
     "next-env.d.ts",

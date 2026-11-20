@@ -19,7 +19,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 1. With Node.js 22.22.1 or later, install dependencies from the project root:
    ```sh
-   npm ci
+   npm install
    ```
 2. Start development server:
    ```sh
@@ -27,7 +27,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
    ```
 3. Build app:
    ```sh
-   npm run  build
+   npm run build
    ```
 
 ## File structure
@@ -58,11 +58,10 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 │   └── ...
 ├── ... - _other configuration files_.
 ├── package.json
-├── package-lock.json
 └── README.md
 ```
 
-The root of project contains common configuration file like _.gitignore_, _.eslintrc.json_.
+The root of project contains common configuration file like _.gitignore_ and _.oxlintrc.json_.
 
 ## Scripts
 
@@ -72,9 +71,9 @@ The root of project contains common configuration file like _.gitignore_, _.esli
 | `build`      | build app                        |
 | `analyze`    | run bundle analyzer              |
 | `start`      | started built app                |
-| `type-check` | run typescript types checking    |
+| `tscheck`    | run TypeScript checks            |
 | `format`     | run prettier                     |
-| `lint`       | run eslint                       |
+| `lint`       | run Oxlint and check formatting  |
 | `prepare`    | husky install                    |
 
 
