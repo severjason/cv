@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "typescript", "react", "import", "jsx-a11y"],
+  "env": { "browser": true, "node": true },
+  "ignorePatterns": ["next-env.d.ts"],
+  "rules": {
+    "import/first": "error",
+    "react/exhaustive-deps": "warn",
+    "react/jsx-no-undef": "error",
+    "react/only-export-components": "warn",
+    "typescript/no-explicit-any": "warn",
+    "eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "eslint/no-console": ["warn", { "allow": ["warn", "error"] }]
+  }
+}

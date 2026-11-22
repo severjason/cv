@@ -5,17 +5,16 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
-const withPWA = require('next-pwa')({
-  disable: process.env.NODE_ENV === 'development',
-  dest: 'public',
+const withSerwist = require('@serwist/next').default({
+  disable: process.env.NODE_ENV !== 'production',
+  swSrc: 'src/service-worker.ts',
+  swDest: 'public/sw.js',
 });
 
-const nextConfig = withBundleAnalyzer(
-  withPWA({
+module.exports = withBundleAnalyzer(
+  withSerwist({
     turbopack: {},
     reactStrictMode: true,
     i18n,
   })
 );
-
-module.exports = nextConfig;

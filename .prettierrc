@@ -4,7 +4,6 @@
   "singleQuote": true,
   "arrowParens": "avoid",
   "trailingComma": "es5",
-  "jsxBracketSameLine": false,
   "printWidth": 120,
   "importOrder": [
     "^react(.*)",

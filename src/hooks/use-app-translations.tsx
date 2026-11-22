@@ -1,6 +1,6 @@
 import { UseTranslationOptions } from 'react-i18next';
 
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next/pages';
 
 import type { LocaleNamespaces, Locales } from '@/types';
 
