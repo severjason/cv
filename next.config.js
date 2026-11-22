@@ -15,6 +15,8 @@ module.exports = withBundleAnalyzer(
   withSerwist({
     turbopack: {},
     reactStrictMode: true,
+    // The build script sets this only after the single-checker type check passes.
+    typescript: { ignoreBuildErrors: process.env.CV_TYPES_CHECKED === '1' },
     i18n,
   })
 );
