@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useRef } from 'react';
 
 import { DataWrapper } from '@/hooks/use-data';
 import { Footer, Header, PrintStyles, Titles } from '@/shared';
@@ -11,11 +11,16 @@ type Props = Omit<PageTitleProps, 'url'> & {
 };
 
 const Layout: React.FC<Props> = ({ children, data, ...pageTitleProps }) => {
+  const cvRef = useRef<HTMLDivElement>(null);
+
   return (
     <DataWrapper data={data}>
-      <PrintStyles />
+      <PrintStyles cvRef={cvRef} />
       <Titles.Page {...pageTitleProps} />
-      <div className="font-sans flex flex-col min-h-full  max-w-(--breakpoint-xl) ml-auto mr-auto shadow-md print:shadow-none">
+      <div
+        ref={cvRef}
+        className="mx-auto flex min-h-full max-w-(--breakpoint-xl) flex-col font-sans shadow-md cv-print:min-h-0 cv-print:w-[1280px] cv-print:max-w-none cv-print:shadow-none"
+      >
         <Header />
         <main className="bg-gray-100">{children}</main>
         <Footer />

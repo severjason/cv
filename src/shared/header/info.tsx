@@ -2,7 +2,6 @@ import React, { ReactElement, useState } from 'react';
 
 import { useAppTranslations } from '@/hooks';
 import { useData } from '@/hooks/use-data';
-import { usePrint } from '@/hooks/use-print';
 import { Buttons, Icons } from '@/shared';
 import { getBtnClx } from '@/shared/button';
 
@@ -13,9 +12,9 @@ type ItemProps = {
 };
 
 const Item: React.FC<ItemProps> = ({ title, icon, comment }) => (
-  <div className="flex w-full pt-1 items-center print:pt-0.5">
+  <div className="flex w-full pt-1 items-center cv-print:pt-0.5">
     <div className="flex">{icon}</div>
-    <div className="flex pl-2 items-baseline flex-col print:text-sm">
+    <div className="flex pl-2 items-baseline flex-col cv-print:text-sm">
       {title}
       {comment && <span className="text-sm ">{comment}</span>}
     </div>
@@ -28,9 +27,6 @@ const EmailInfo = () => {
   const [emailIsShown, setEmailIsShown] = useState(false);
 
   const onShowEmail = () => setEmailIsShown(true);
-  const onHideEmail = () => setEmailIsShown(false);
-
-  usePrint({ onBeforePrint: onShowEmail, onAfterPrint: onHideEmail });
 
   const email = data?.main_info?.email;
 
@@ -56,8 +52,8 @@ const EmailInfo = () => {
           className={getBtnClx({ variant: 'link' })}
           onClick={handleClick}
         >
-          <span className={'flex'}>{emailIsShown ? email : t('common:links.email')}</span>
-          <span className="hidden hover:flex">{email}</span>
+          <span className="flex cv-print:hidden">{emailIsShown ? email : t('common:links.email')}</span>
+          <span className="hidden hover:flex cv-print:flex">{email}</span>
         </p>
       }
     />
@@ -67,17 +63,18 @@ const EmailInfo = () => {
 const LocationInfo = () => {
   const { t } = useAppTranslations();
   const { data, parseI18Data } = useData();
-  const { isPrinting } = usePrint();
   const location = data?.main_info?.location;
 
   if (!location) return null;
 
-  const title = !isPrinting ? (
-    <Buttons.Link href={location.link} title={t('common:links.location') as string}>
-      {parseI18Data(location.title)}
-    </Buttons.Link>
-  ) : (
-    parseI18Data(location.title)
+  const locationTitle = parseI18Data(location.title);
+  const title = (
+    <>
+      <Buttons.Link className="cv-print:hidden" href={location.link} title={t('common:links.location') as string}>
+        {locationTitle}
+      </Buttons.Link>
+      <span className="hidden cv-print:inline">{locationTitle}</span>
+    </>
   );
 
   return <Item icon={<Icons.Marker className="fill-white" />} title={title} comment={parseI18Data(location.comment)} />;
@@ -93,7 +90,7 @@ const FamilyInfo = () => {
 };
 
 const Info = () => (
-  <div className="flex w-full pt-2 flex-col print:pt-1">
+  <div className="flex w-full pt-2 flex-col cv-print:pt-1">
     <EmailInfo />
     <LocationInfo />
     <FamilyInfo />

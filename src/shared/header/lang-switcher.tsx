@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { LANGUAGES } from 'src/constants';
 
 import { useAppTranslations } from '@/hooks';
-import { usePrint } from '@/hooks/use-print';
 import { Buttons } from '@/shared';
 
 const LangSwitcherButton: React.FC<{ icon: ReactNode }> = ({ icon }) => {
@@ -18,7 +17,6 @@ const LangSwitcherButton: React.FC<{ icon: ReactNode }> = ({ icon }) => {
 
 const LangSwitcher = () => {
   const { lang } = useAppTranslations();
-  const { isPrinting } = usePrint();
   const Icon = LANGUAGES[lang]?.flagIcon;
   const nextLocale = LANGUAGES[lang]?.nextLang;
 
@@ -26,13 +24,12 @@ const LangSwitcher = () => {
 
   return (
     <div className="p-1">
-      {isPrinting ? (
+      <div className="hidden cv-print:block">
         <LangSwitcherButton icon={<Icon />} />
-      ) : (
-        <Link href={`/`} locale={nextLocale}>
-          <LangSwitcherButton icon={<Icon />} />
-        </Link>
-      )}
+      </div>
+      <Link className="cv-print:hidden" href="/" locale={nextLocale}>
+        <LangSwitcherButton icon={<Icon />} />
+      </Link>
     </div>
   );
 };

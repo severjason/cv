@@ -20,7 +20,7 @@ const StackList: React.FC<StackListProps> = ({ stack, listLength = 0, index = 0 
   const isSingle = listLength <= 1;
 
   return (
-    <p className={`${isLast ? 'pb-0' : 'pb-2'} ${isSingle ? 'pl-0' : 'pl-4 md:pl-8'}`}>
+    <p className={`${isLast ? 'pb-0' : 'pb-2'} ${isSingle ? 'pl-0' : 'pl-4 md:pl-8 cv-print:pl-8'}`}>
       <span className={'pr-0.5 font-semibold'}>{`${t('common:experience.stack')}:`}</span>
       {`${stack?.join(', ')}.`}
     </p>

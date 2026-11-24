@@ -15,7 +15,7 @@ export const LinkButton: React.FC<LinkButtonProps> = ({ className, children, ...
   return (
     <Link className={classes} color="textPrimary" target="_blank" rel="noopener noreferrer" {...props}>
       {children}
-      <Icons.Link className={'hidden print:inline-flex'} />
+      <Icons.Link className={'hidden cv-print:inline-flex'} />
     </Link>
   );
 };

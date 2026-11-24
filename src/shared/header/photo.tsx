@@ -11,7 +11,7 @@ const Photo = () => {
   const { t } = UseAppTranslations();
 
   return (
-    <div className="flex w-full h-full justify-center items-center max-w-32 md:max-w-40 xl:max-w-64 ">
+    <div className="flex w-full h-full justify-center items-center max-w-32 md:max-w-40 xl:max-w-64 cv-print:max-w-64 ">
       <Image
         loading="eager"
         title={`${fullName} ${t('common:photo')}`}

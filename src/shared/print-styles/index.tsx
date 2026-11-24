@@ -1,41 +1,44 @@
-import { useEffect } from 'react';
+import { type RefObject, useEffect } from 'react';
 
-import { useAppTranslations } from '@/hooks';
-import { Locales } from '@/types';
+const PRINT_WIDTH = 1280;
 
-const PAGE_SIZE: Record<Locales, string> = {
-  [Locales.en]: '1280px 3170px',
-  [Locales.de]: '1280px 3340px',
-  [Locales.uk]: '1280px 3320px',
+type Props = {
+  cvRef: RefObject<HTMLDivElement | null>;
 };
 
-const PrintStyles = () => {
-  const { lang } = useAppTranslations();
-
-  const size = PAGE_SIZE[lang] || PAGE_SIZE[Locales.en];
-
+const PrintStyles = ({ cvRef }: Props) => {
   useEffect(() => {
     const style = document.createElement('style');
-    style.id = 'dynamic-print-style';
-
-    style.innerHTML = `
-      @media print {
-        @page {
-          margin: 0;
-          size: ${size};
-        }
-      }
-    `;
-
-    const existing = document.getElementById('dynamic-print-style');
-    if (existing) existing.remove();
-
+    const root = document.documentElement;
     document.head.appendChild(style);
 
-    return () => {
-      style.remove(); // cleanup on unmount
+    const updatePageSize = () => {
+      const cv = cvRef.current;
+      if (!cv) return;
+
+      // beforeprint can fire before the browser switches to print media.
+      root.setAttribute('data-measuring-cv', '');
+      try {
+        const height = Math.ceil(cv.getBoundingClientRect().height);
+        style.textContent = height > 0 ? `@page { size: ${PRINT_WIDTH}px ${height}px; margin: 0; }` : '';
+      } finally {
+        root.removeAttribute('data-measuring-cv');
+      }
     };
-  }, [size]);
+
+    const resetPageSize = () => {
+      style.textContent = '';
+    };
+
+    window.addEventListener('beforeprint', updatePageSize);
+    window.addEventListener('afterprint', resetPageSize);
+
+    return () => {
+      window.removeEventListener('beforeprint', updatePageSize);
+      window.removeEventListener('afterprint', resetPageSize);
+      style.remove();
+    };
+  }, [cvRef]);
 
   return null;
 };

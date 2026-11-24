@@ -1,5 +1,15 @@
 @import 'tailwindcss';
 
+/* Apply the same layout while measuring and while printing. */
+@custom-variant cv-print {
+  @media print {
+    @slot;
+  }
+  :where(html[data-measuring-cv]) & {
+    @slot;
+  }
+}
+
 @theme {
   --font-*: initial;
   --font-sans:
